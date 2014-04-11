@@ -18,7 +18,7 @@ import com.sun.xacml.finder.PolicyFinder;
 import com.sun.xacml.finder.impl.FilePolicyModule;
 
 /**
- * @author subhasis
+ * @author subhasis dasgupta
  *
  */
 public class xacmlRequest {
@@ -27,7 +27,7 @@ public class xacmlRequest {
 	private String[] policyFile;
 	private String permissionReply;
 	/**
-	 * @param requestFile
+	 * @param requestFile 
 	 * @param policyFile
 	 */
 	public xacmlRequest(String requestFile, String[] policyFile) {
