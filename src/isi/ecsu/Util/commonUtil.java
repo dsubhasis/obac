@@ -57,6 +57,10 @@ public class commonUtil {
 		query = "SELECT ?cls FROM <"+ graphName +"> WHERE { ?cls a owl:Class . ?cls rdfs:subClassOf <"+ parentURI +"> }";
 		return query;
 	}
+	public static String queryListSuperClassNode(String graphName ){
+		return graphName;
+		
+	}
 	
 	
 	
