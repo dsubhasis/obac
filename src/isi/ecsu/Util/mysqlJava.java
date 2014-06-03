@@ -1,3 +1,4 @@
+
 /**
  * 
  */
@@ -49,6 +50,7 @@ public class mysqlJava {
 			ResultSet rs = stmt.executeQuery(charT);
 			writeResultSet(rs);
 			
+
 			
 
 		} catch (ClassNotFoundException e) {
