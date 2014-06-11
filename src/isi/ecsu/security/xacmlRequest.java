@@ -28,12 +28,12 @@ public class xacmlRequest {
 	private String permissionReply;
 	/**
 	 * @param requestFile 
-	 * @param policyFile
+	 * @param policyFile2
 	 */
-	public xacmlRequest(String requestFile, String[] policyFile) {
+	public xacmlRequest(String requestFile, String[] policyFile2) {
 
 		this.requestFile = requestFile;
-		this.policyFile = policyFile;
+		this.policyFile = policyFile2;
 	}
 	/**
 	 * @return the requestFile
