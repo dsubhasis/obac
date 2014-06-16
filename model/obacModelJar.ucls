@@ -3,21 +3,21 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <package id="1" language="java" name="isi.ecsu.view.struct" project="trunk" file="/trunk/src/isi/ecsu/view/struct" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="105" y="-60"/>    
+    <position height="-1" width="-1" x="153" y="-110"/>    
     <display autosize="true" stereotype="true" accessors="true"/>  
   </package>  
   <class id="2" language="java" name="isi.ecsu.view.struct.OntologyConcept" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/OntologyConcept.java" binary="false" corner="TOP_LEFT">    
-    <position height="-1" width="-1" x="124" y="297"/>    
+    <position height="-1" width="-1" x="-40" y="173"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="false" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
   <class id="3" language="java" name="isi.ecsu.view.struct.DocumentClass" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/DocumentClass.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="120" y="632"/>    
+    <position height="-1" width="-1" x="-44" y="453"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -26,7 +26,7 @@
   </class>  
   <class id="4" language="java" name="isi.ecsu.view.struct.MultimediaObject" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/MultimediaObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="188" width="196" x="292" y="461"/>    
+    <position height="188" width="196" x="304" y="225"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -35,7 +35,7 @@
   </class>  
   <class id="5" language="java" name="isi.ecsu.view.struct.eBooks" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/eBooks.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="176" width="142" x="320" y="277"/>    
+    <position height="176" width="142" x="312" y="-9"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -44,7 +44,7 @@
   </class>  
   <class id="6" language="java" name="isi.ecsu.view.struct.Subject" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/Subject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="577" y="330"/>    
+    <position height="-1" width="-1" x="584" y="302"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -53,7 +53,7 @@
   </class>  
   <class id="7" language="java" name="isi.ecsu.view.struct.user" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/user.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="764" y="13"/>    
+    <position height="-1" width="-1" x="692" y="-61"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -62,91 +62,158 @@
   </class>  
   <class id="8" language="java" name="isi.ecsu.view.struct.organization" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/organization.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="792" y="304"/>    
+    <position height="-1" width="-1" x="888" y="61"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="isi.ecsu.Util.virtuosoData" project="trunk" 
-    file="/trunk/src/isi/ecsu/Util/virtuosoData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="478" y="8"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="isi.ecsu.view.struct.DataAceess" project="trunk" 
+  <class id="9" language="java" name="isi.ecsu.view.struct.DataAceess" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/DataAceess.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="117" y="34"/>    
+    <position height="-1" width="-1" x="400" y="-83"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="11" language="java" name="isi.ecsu.view.struct.impl.View" project="trunk" 
+  <interface id="10" language="java" name="isi.ecsu.view.struct.impl.View" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/impl/View.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="368" y="701"/>    
+    <position height="-1" width="-1" x="539" y="463"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="12" language="java" name="isi.ecsu.view.struct.impl.viewGenerationModule" project="trunk" 
+  <class id="11" language="java" name="isi.ecsu.view.struct.impl.viewGenerationModule" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/impl/viewGenerationModule.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="634" y="885"/>    
+    <position height="-1" width="-1" x="245" y="587"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="isi.ecsu.security.XACMLCredentials" project="trunk" 
+  <class id="12" language="java" name="isi.ecsu.security.XACMLCredentials" project="trunk" 
     file="/trunk/src/isi/ecsu/security/XACMLCredentials.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="748" y="619"/>    
+    <position height="-1" width="-1" x="930" y="604"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="14" language="java" name="isi.ecsu.view.struct.impl" project="trunk" 
+  <package id="13" language="java" name="isi.ecsu.view.struct.impl" project="trunk" 
     file="/trunk/src/isi/ecsu/view/struct/impl" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="239" y="-102"/>    
+    <position height="-1" width="-1" x="-67" y="-119"/>    
     <display autosize="true" stereotype="true" accessors="true"/>  
   </package>  
-  <generalization id="15">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="16">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
+  <class id="14" language="java" name="isi.ecsu.security.RoleAccess" project="trunk" 
+    file="/trunk/src/isi/ecsu/security/RoleAccess.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-51" y="800"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="15" language="java" name="isi.ecsu.security" project="trunk" file="/trunk/src/isi/ecsu/security" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="68" y="-6"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <interface id="16" language="java" name="isi.ecsu.view.struct.impl.StorageAccess" project="trunk" 
+    file="/trunk/src/isi/ecsu/view/struct/impl/StorageAccess.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="98" width="208" x="472" y="572"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="isi.ecsu.view.struct.impl.mysqlDataAccess" project="trunk" 
+    file="/trunk/src/isi/ecsu/view/struct/impl/mysqlDataAccess.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="678" y="941"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <generalization id="18">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="20">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="6"/>  
   </generalization>  
+  <dependency id="19">    
+    <bendpoint x="275" y="741"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
   <realization id="21">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="11"/>  
+    <bendpoint x="418" y="574"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
   </realization>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <dependency id="25">    
+    <bendpoint x="209" y="385"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <association id="28">    
+    <bendpoint x="241" y="493"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="29" name="oc"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="31">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

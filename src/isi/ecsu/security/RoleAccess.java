@@ -3,6 +3,14 @@
  */
 package isi.ecsu.security;
 
+import isi.ecsu.Util.mysqlJava;
+import isi.ecsu.view.struct.impl.StorageAccess;
+import isi.ecsu.view.struct.impl.mysqlDataAccess;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Logger;
+
 /**
  * @author subhasis
  *
@@ -15,12 +23,8 @@ public class RoleAccess {
 	 * @param userName
 	 * @param userId
 	 */
-	public RoleAccess(String roleName, String roleId, String userName,
-			String userId) {
-		this.roleName = roleName;
-		this.roleId = roleId;
-		this.userName = userName;
-		this.userId = userId;
+	public RoleAccess() {
+		
 	}
 	private String roleName;
 	private String roleId;
@@ -33,6 +37,7 @@ public class RoleAccess {
 	public String getRoleName() {
 		return roleName;
 	}
+	private final static Logger LOGGER = Logger.getLogger(RoleAccess.class.getName());
 	/**
 	 * @param roleName the roleName to set
 	 */
@@ -87,11 +92,24 @@ public class RoleAccess {
 	public void setPerMission(String perMission) {
 		this.perMission = perMission;
 	}
+	public ArrayList getRoleName(String user) throws SQLException
+	{
+		StorageAccess st = new mysqlDataAccess();
+		String query ="SELECT roleName from roleTable where user=\"" + user + "\";";
+		ArrayList lroleName = st.getResultArrayList("roleName", query);
+		return lroleName;
+		
+	}
 	
-	public String getPermission(String userName, String roleName)
+	public ArrayList getPermission(String objectName, String roleName) throws SQLException
 	{
 		
-		return perMission; 
+		StorageAccess st = new mysqlDataAccess();
+		String query ="SELECT roleName from roleTable where user=\"" + objectName + "\";";
+		ArrayList lroleName = st.getResultArrayList("roleName", query);
+		return lroleName;
+		
+		
 	}
 
 }
