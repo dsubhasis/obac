@@ -9,6 +9,7 @@ import isi.ecsu.view.struct.impl.mysqlDataAccess;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Logger;
 
 /**
@@ -101,13 +102,18 @@ public class RoleAccess {
 		
 	}
 	
-	public ArrayList getPermission(String objectName, String roleName) throws SQLException
+	public int getPermission(String objectName, String roleName) throws SQLException
 	{
 		
-		StorageAccess st = new mysqlDataAccess();
-		String query ="SELECT roleName from roleTable where user=\"" + objectName + "\";";
-		ArrayList lroleName = st.getResultArrayList("roleName", query);
-		return lroleName;
+		//StorageAccess st = new mysqlDataAccess();
+		//String query ="SELECT permission from roleTable where user=\"" + objectName + "\";";
+		//ArrayList lroleName = st.getResultArrayList("roleName", query);
+		
+		Random rand=new Random(); 
+		int x=rand.nextInt(100); 
+		int y = x % 2;
+		
+		return  y;
 		
 		
 	}

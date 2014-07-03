@@ -5,15 +5,20 @@ package isi.ecsu.view.struct.impl;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.ModelFactoryBase;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 
+import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.security.RoleAccess;
 import isi.ecsu.view.struct.OntologyConcept;
+import isi.ecsu.view.struct.userRootView;
 
 /**
  * @author subhasis
@@ -24,7 +29,7 @@ public class viewGenerationModule implements View {
 	/**
 	 * @param user
 	 */
-	public viewGenerationModule(String user) {
+	public viewGenerationModule() {
 		this.user = user;
 	}
 	private String user;
@@ -65,17 +70,27 @@ public class viewGenerationModule implements View {
 	 * 
 	 */
 	
-    protected OntModel roleView(OntModel lmodel, String roleName, String rootObject ) throws Exception {
+    public OntModel roleView(OntModel lmodel, String roleName, String rootObject ) throws Exception {
     	
-		//Find the children of the object 
-      StorageAccess virt = new virtDataAccess();
-      String queryString = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT * FROM <http://ecsu.org> WHERE {  ?p skos:prefLabel ?q .}";
-      ResultSet rst = virt.executeQuery(queryString);
-      rst.getResultVars();
-      
-     
+	Map rst = null ;
+    userRootView urv = new userRootView();
+    String PolicyFile[] = null;
+    if(rootObject.isEmpty() )
+    {
+    	rootObject = CommonConstant.topConcept;
+    }
+    String parentURI = CommonConstant.commonURI + rootObject;
+    try {
+		rst = urv.getUserView("parent" , "child" , "userId", "rootElement", "requestFile", PolicyFile , "http://science.org", parentURI);
+	} catch (Throwable e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+   
+   
+    
     	
-    	
+   // System.out.println("\n Total Subclass Found : " + rst.getRowNumber() );	
     	return lmodel;
     	
     }

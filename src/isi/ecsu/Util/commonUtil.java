@@ -50,19 +50,45 @@ public class commonUtil {
 		
 		
 	}
-	public static String queryListSubClassNode(String graphName , String parentURI){
+	public static String queryListSubClassNode(String graphName , String parentURI, String relation00 , String Prefix){
+		
+		String query;
+		
+		query = Prefix + " SELECT ?cls FROM <"+ graphName +"> WHERE {  ?cls " + relation00 + "<"+ parentURI +"> }";
+		return query;
+	}
+public static String queryListParentClassNode(String graphName , String childURI, String relation00 , String Prefix){
+		
+		String query;
+		
+		query = Prefix + " SELECT ?cls FROM <"+ graphName +"> WHERE { <"  + childURI +">  " +relation00 + "  ?cls}";
+		return query;
+	}
+public static String queryListTopClassNode(String graphName , String parentURI, String relation00, String relation01){
+		String query;
+		
+		query = "SELECT ?cls FROM <"+ graphName +"> WHERE { ?cls a " + relation00  + " }";
+		return query;
+	}
+	
+	public static String queryListSuperClassNode(String graphName ){
+		return graphName;
+		
+	}
+	
+public static String queryListofFirstRelationChild(String graphName , String parentURI){
 		
 		String query;
 		
 		query = "SELECT ?cls FROM <"+ graphName +"> WHERE { ?cls a owl:Class . ?cls rdfs:subClassOf <"+ parentURI +"> }";
 		return query;
 	}
-	public static String queryListSuperClassNode(String graphName ){
-		return graphName;
-		
-	}
+public static String queryListofFirstRelationParants(String graphName , String parentURI){
 	
+	String query;
 	
-	
+	query = "SELECT ?cls FROM <"+ graphName +"> WHERE { ?cls a owl:Class . ?cls rdfs:subClassOf <"+ parentURI +"> }";
+	return query;
+}
 	
 }
