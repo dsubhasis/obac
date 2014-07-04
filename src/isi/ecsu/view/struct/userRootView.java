@@ -57,17 +57,18 @@ public class userRootView {
 		String prefix = CommonConstant.prefix01;
 		nodeElement.put(parentURI, 1);
 		positiveList.add(parentURI);
-		System.out.println("\n Analysys Started for : " +lparentURI);
+		//System.out.println("\n Analysys Started for : " +lparentURI);
 		do{
-			System.out.println("\n Executing Query On  : " +lparentURI+ " Concept" );	
+			//System.out.println("\n Executing Query On  : " +lparentURI+ " Concept" );	
 		String query = commonUtil.queryListSubClassNode(graphName, lparentURI, CommonConstant.relation00, prefix);
+		System.out.println("\nQuery \t" +query );
 		ResultSet subClasses = virt.executeQuery(query);
 		
 		while (subClasses.hasNext()) {
 			QuerySolution row= subClasses.next();
 			RDFNode x = row.get("cls");
 			//System.out.println(x.toString());
-			System.out.println("\n Analysing Concept : " +lparentURI+ " and it's Subclass "+ x.toString()  );
+			//System.out.println("\n Analysing Concept : " +lparentURI+ " and it's Subclass "+ x.toString()  );
 			int permRoot = raccess.getPermission(x.toString(), "roleName");
 			query = commonUtil.queryListParentClassNode(graphName, x.toString(), CommonConstant.relation00 , prefix) ;
 			ResultSet parentList = virt.executeQuery(query);
@@ -109,7 +110,7 @@ public class userRootView {
 			
 			if(subClasses.getRowNumber() == 1)
 			{
-				System.out.println("\n LEAF NODE Found  " +lparentURI);
+				//System.out.println("\n LEAF NODE Found  " +lparentURI);
 			}
 		}
 		
@@ -119,7 +120,7 @@ public class userRootView {
 		lparentURI = unVisited.get(unVisited.size() - 1);
 		unVisited.remove(lparentURI);
 		}
-		System.out.println("\n Shifting to Child Concept  " +lparentURI);
+		//System.out.println("\n Shifting to Child Concept  " +lparentURI);
 		
 	}while(unvisitedCount > 0);
 		
