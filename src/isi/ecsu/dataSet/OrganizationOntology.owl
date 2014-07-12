@@ -1,0 +1,1187 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#"
+     xml:base="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Accounting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Accounting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AdminRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AdminRole"/>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Aerospace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Aerospace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AfricanStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AfricanStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AnatomyandNeurobiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AnatomyandNeurobiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AnesthesiologyandPerioperative_Care -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AnesthesiologyandPerioperative_Care">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AppellateLitigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AppellateLitigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ArtHistory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ArtHistory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AsianStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AsianStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Astronomy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Astronomy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BasicandClinicalImmunology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BasicandClinicalImmunology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BioMedical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BioMedical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalChemistry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalChemistry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalSciences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalSciences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BusinessInformationManagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BusinessInformationManagement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Cardiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Cardiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CardiothoracicSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CardiothoracicSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CellBilogy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CellBilogy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Chemical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Chemical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Chemistry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Chemistry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CivicandCommunityEngagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CivicandCommunityEngagement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PsychologyandSocialBehavior"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Civil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Civil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ColonandRectal_Surgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ColonandRectal_Surgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CommunityandEconomicDevelopment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CommunityandEconomicDevelopment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComparativeLiterature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComparativeLiterature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScience -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScience">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScienceDepartment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScienceDepartment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScience"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationsAndComputerScience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScienceandEngineering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScienceandEngineering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScienceDepartment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ConsumerProtection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ConsumerProtection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CriminologyLawandSociety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#CriminologyLawandSociety">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialEcology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DIN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DIN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Dance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Dance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DataOperator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DataOperator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DeputyLibrarian"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HomeInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DeputyLibrarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DeputyLibrarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#chieflibrarian"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Dermatology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Dermatology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Director">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DomesticViolence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DomesticViolence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Drama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Drama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EarthScience -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EarthScience">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Ecology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Ecology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EconomicsandPublicPolicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EconomicsandPublicPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Educations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Educations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Electrical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Electrical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Electronics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Electronics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EmergencyMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EmergencyMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Endocrinology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Endocrinology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#English -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#English">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Environmental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Environmental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EnvironmentalLaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EnvironmentalLaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Ecology"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Epidemiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Epidemiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#FamilyMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#FamilyMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#FilmandMediaStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#FilmandMediaStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Finance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Finance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Statistics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ForignLanguageStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ForignLanguageStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Gastroenterology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Gastroenterology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GastrointestinalSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GastrointestinalSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GenderandSexualityStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GenderandSexualityStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GeneralInternalMedicineandPrimaryCare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GeneralInternalMedicineandPrimaryCare">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GlobalSustainability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#GlobalSustainability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HematologyandOncology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HematologyandOncology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HepatobiliaryAndPancreasSurgeryAndIsletCellTransplantation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HepatobiliaryAndPancreasSurgeryAndIsletCellTransplantation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#History -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#History">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HistoryandPhilosophyofScience -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HistoryandPhilosophyofScience">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HomeInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#HomeInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ImmigrantRights -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ImmigrantRights">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InfectiousDiseases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InfectiousDiseases">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Informatics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Informatics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationsAndComputerScience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationSystems -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationSystems">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ComputerScienceDepartment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationsAndComputerScience -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationsAndComputerScience">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InstituteA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InstituteA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OtherInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InstituteB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InstituteB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OtherInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Institution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Institution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Member"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InternationalHumanRights -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InternationalHumanRights">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InternationalJustice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InternationalJustice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Law">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Librarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Librarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AdminRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Marketing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Marketing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Mathematics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Mathematics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Mechanical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Mechanical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Member -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Member">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AdminRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#MicrobiologyandMolecularGenetics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#MicrobiologyandMolecularGenetics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ModernArts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ModernArts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#MolecularBiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#MolecularBiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Music -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Music">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NativeStudies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NativeStudies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AfricanStudies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AsianStudies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ForignLanguageStudies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InterdisciplinaryStudies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NephrologyandHypertension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NephrologyandHypertension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NeuroBiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NeuroBiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#BiologicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NeurologicalSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#NeurologicalSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Neurology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Neurology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ObstetricsandGynecology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ObstetricsandGynecology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OccupationalandEnvironmentalMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OccupationalandEnvironmentalMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OfficeExecutive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OfficeExecutive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Director"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OperationsandDecisionTechnology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OperationsandDecisionTechnology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Ophthalmology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Ophthalmology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OrganizationandManagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OrganizationandManagement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OrthopaedicSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OrthopaedicSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OtherInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#OtherInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Otolaryngology-HeadandNeckSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Otolaryngology-HeadandNeckSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PathologyandLaboratoryMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PathologyandLaboratoryMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Pediatrics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Pediatrics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PersonalAssitant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PersonalAssitant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PharmaceuticalSciences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PharmaceuticalSciences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Pharmacology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Pharmacology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Pharmacology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Philosophy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Philosophy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Humanities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalMedicineRehabilitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalMedicineRehabilitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Physics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Physics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysicalSciences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysiologyandBiophysics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PhysiologyandBiophysics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PlanningPolicyandDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PlanningPolicyandDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialEcology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PlasticSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PlasticSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PsychiatryandHuman_Behavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PsychiatryandHuman_Behavior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PsychologyandSocialBehavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PsychologyandSocialBehavior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialEcology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PublicHealth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PublicHealth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#EmergencyMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PulmonaryDiseasesandCriticalCareMedicine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#PulmonaryDiseasesandCriticalCareMedicine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#RadiationOncology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#RadiationOncology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#RadiologicalSciences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#RadiologicalSciences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ResearchScholar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ResearchScholar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Rheumatology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Rheumatology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#ClinicalMedicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialEcology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialEcology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialSciences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SocialSciences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AfricanStudies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AsianStudies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Depertment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Statistics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Statistics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#InformationsAndComputerScience"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Mathematics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Strategy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Strategy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Informatics"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Statistics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SurgicalOncology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SurgicalOncology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SysAdmin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#SysAdmin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#AdminRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Transplantation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Transplantation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#TraumaCriticalCareAcuteCareandBurnSurgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#TraumaCriticalCareAcuteCareandBurnSurgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Urology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Urology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Medicine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Member"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#VascularAndEndovascular_Surgery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#VascularAndEndovascular_Surgery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Surgery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#VisualArt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#VisualArt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Arts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#chieflibrarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#chieflibrarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Librarian"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#DIN"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
