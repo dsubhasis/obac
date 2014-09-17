@@ -17,8 +17,7 @@ import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
 import isi.ecsu.security.RoleAccess;
 import isi.ecsu.security.xacmlRequest;
-import isi.ecsu.view.struct.impl.StorageAccess;
-import isi.ecsu.view.struct.impl.virtDataAccess;
+
 
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
@@ -46,9 +45,6 @@ public class userRootView {
 
 	
 	public Map getUserView(String parent , String child, String user, String rootElement, String requestFile, String policyFile[], String graphName, String parentURI) throws Throwable{
-		//Model lmodel = ModelFactory.createDefaultModel();
-		//String lparentAuth = parent;
-		//String lchildAuth = child;
 		Map<String, List<String>> roleNodeSet = new HashMap<String, List<String>>();
 		String lparentURI = parentURI;
 		int unvisitedCount = 0;
@@ -57,9 +53,7 @@ public class userRootView {
 		String prefix = CommonConstant.prefix01;
 		nodeElement.put(parentURI, 1);
 		positiveList.add(parentURI);
-		//System.out.println("\n Analysys Started for : " +lparentURI);
 		do{
-			//System.out.println("\n Executing Query On  : " +lparentURI+ " Concept" );	
 		String query = commonUtil.queryListSubClassNode(graphName, lparentURI, CommonConstant.relation00, prefix);
 		System.out.println("\nQuery \t" +query );
 		ResultSet subClasses = virt.executeQuery(query);
@@ -67,8 +61,6 @@ public class userRootView {
 		while (subClasses.hasNext()) {
 			QuerySolution row= subClasses.next();
 			RDFNode x = row.get("cls");
-			//System.out.println(x.toString());
-			//System.out.println("\n Analysing Concept : " +lparentURI+ " and it's Subclass "+ x.toString()  );
 			int permRoot = raccess.getPermission(x.toString(), "roleName");
 			query = commonUtil.queryListParentClassNode(graphName, x.toString(), CommonConstant.relation00 , prefix) ;
 			ResultSet parentList = virt.executeQuery(query);
@@ -82,8 +74,6 @@ public class userRootView {
 			}
 			System.out.println("\n For the Concept  " +x.toString()+ "  Number of Paernt Found " +parentList.getRowNumber() );
 			int permChild = raccess.getPermission(x.toString(), "roleName" ); 
-			//System.out.println("Perm Root \t " +permRoot+ "  Perm Child "+permChild);
-			
 			if(permRoot == 1 || permChild == 1)
 			{
 				nodeElement.put(x.toString(), 1);

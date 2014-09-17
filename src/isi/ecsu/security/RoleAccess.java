@@ -4,8 +4,6 @@
 package isi.ecsu.security;
 
 import isi.ecsu.Util.mysqlJava;
-import isi.ecsu.view.struct.impl.StorageAccess;
-import isi.ecsu.view.struct.impl.mysqlDataAccess;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
