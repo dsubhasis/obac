@@ -3,7 +3,8 @@
  */
 package isi.ecsu.security;
 
-import isi.ecsu.Util.mysqlJava;
+import isi.ecsu.view.struct.impl.StorageAccess;
+import isi.ecsu.view.struct.impl.MysqlDataAccess;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,7 +16,6 @@ import java.util.logging.Logger;
  *
  */
 public class RoleAccess {
-	
 	/**
 	 * @param roleName
 	 * @param roleId
@@ -23,7 +23,6 @@ public class RoleAccess {
 	 * @param userId
 	 */
 	public RoleAccess() {
-		
 	}
 	private String roleName;
 	private String roleId;
@@ -40,13 +39,13 @@ public class RoleAccess {
 	/**
 	 * @param roleName the roleName to set
 	 */
-	public void setRoleName(String roleName) {
+	public final void setRoleName(final String roleName) {
 		this.roleName = roleName;
 	}
 	/**
 	 * @return the roleId
 	 */
-	public String getRoleId() {
+	public final String getRoleId() {
 		return roleId;
 	}
 	/**
@@ -93,7 +92,7 @@ public class RoleAccess {
 	}
 	public ArrayList getRoleName(String user) throws SQLException
 	{
-		StorageAccess st = new mysqlDataAccess();
+		StorageAccess st = new MysqlDataAccess();
 		String query ="SELECT roleName from roleTable where user=\"" + user + "\";";
 		ArrayList lroleName = st.getResultArrayList("roleName", query);
 		return lroleName;

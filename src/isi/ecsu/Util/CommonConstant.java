@@ -12,12 +12,7 @@ public class CommonConstant {
 	/**
 	 * 
 	 */
-	public CommonConstant() {
-		// TODO Auto-generated constructor stub
-		  
-		//// Prevents instantiation 
-		
-	}
+	
 	
 	public static final String JDRIVER = "com.mysql.jdbc.Driver";
 	public static final String DB_URL = "jdbc:mysql://localhost/zabbix";
@@ -33,6 +28,14 @@ public class CommonConstant {
 	public static final String masterStorage ="http://science.org";
 	public static final String topConcept = "ScienceFields";
 	public static final String prefix01 = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>";
+	
+	public CommonConstant() {
+		// TODO Auto-generated constructor stub
+		  
+		//// Prevents instantiation 
+		
+	}
+	
 	
 	
 	
