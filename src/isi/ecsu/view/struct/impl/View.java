@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package isi.ecsu.view.struct.impl;
 
 import java.sql.SQLException;

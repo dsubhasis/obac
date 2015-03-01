@@ -74,7 +74,7 @@ public class VirtDataAccess implements StorageAccess{
 		this.virtUserName = virtUserName;
 	}
 	
-	private VirtGraph virtConnect(){
+	private VirtGraph virtConnect(){ 
 		String userName = CommonConstant.virtUser;
 		String passWord = CommonConstant.virtPassword; 
 		String virtUrl = CommonConstant.virtUrl;

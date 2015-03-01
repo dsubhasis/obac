@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package isi.ecsu.dataSet;
 
 
@@ -50,7 +53,7 @@ public class RandomOntology {
 	public OntModel GenerateOntology(int n)
 	{
 		randOntology = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
-		uri = "http://www.iwi-iuk.org/material/RDF/Schema/Class/scf#DL-Concept"; // take it as an argument
+		uri = "http://www.iwi-iuk.org/material/RDF/Schema/Class/scf#Property-III"; // take it as an argument
 		OntClass randClass = null;
 
 		randOntology.createProperty("http://ontology.project/#hasContributedto");
@@ -112,11 +115,11 @@ public class RandomOntology {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		RandomOntology r = new RandomOntology(10000);
+		RandomOntology r = new RandomOntology(600);
 		OntModel o = r.GenerateOntology();
 		//o.write(System.out);
 
-		File ontologyOutput = new File("/Users/subhasis/Documents/workspace/trunk/trunk/src/isi/ecsu/dataSet/ontology_1L.owl");
+		File ontologyOutput = new File("/Users/subhasis/Documents/workspace/trunk/trunk/src/isi/ecsu/dataSet/property-3.owl");
 
 		if (!ontologyOutput.exists())
 		{

@@ -3,9 +3,9 @@
  */
 package isi.ecsu.view.struct;
 
+import java.util.Date;
 import java.util.List;
 
-import sun.util.calendar.BaseCalendar.Date;
 
 /**
  * @author subhasis
