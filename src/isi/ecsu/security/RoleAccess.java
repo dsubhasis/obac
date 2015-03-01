@@ -3,13 +3,23 @@
  */
 package isi.ecsu.security;
 
+import isi.ecsu.Util.CommonConstant;
+import isi.ecsu.Util.commonUtil;
+import isi.ecsu.view.struct.accessibleChildren;
 import isi.ecsu.view.struct.impl.StorageAccess;
 import isi.ecsu.view.struct.impl.MysqlDataAccess;
+import isi.ecsu.view.struct.impl.VirtDataAccess;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
+
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 
 /**
  * @author subhasis
@@ -29,6 +39,7 @@ public class RoleAccess {
 	private String userName;
 	private String userId;
 	private String perMission;
+	private accessibleChildren asc ;
 	/**
 	 * @return the roleName
 	 */
@@ -90,27 +101,69 @@ public class RoleAccess {
 	public void setPerMission(String perMission) {
 		this.perMission = perMission;
 	}
-	public ArrayList getRoleName(String user) throws SQLException
+	public ArrayList<?> getRoleName(String user) throws SQLException
 	{
 		StorageAccess st = new MysqlDataAccess();
 		String query ="SELECT roleName from roleTable where user=\"" + user + "\";";
-		ArrayList lroleName = st.getResultArrayList("roleName", query);
+		ArrayList<?> lroleName = st.getResultArrayList("roleName", query);
 		return lroleName;
 		
 	}
 	
-	public int getPermission(String objectName, String roleName) throws SQLException
+	public int getPermission(String objectName, String roleName) throws Exception
 	{
 		
 		//StorageAccess st = new mysqlDataAccess();
 		//String query ="SELECT permission from roleTable where user=\"" + objectName + "\";";
 		//ArrayList lroleName = st.getResultArrayList("roleName", query);
 		
+		asc = new accessibleChildren();
+		int numberOfActiveSubject = HierarchyActiveComponentList(asc);
+		Iterator itl = asc.getChildren().iterator();
+		while(itl.hasNext())
+		{
+		   String subject = (String) itl.next();
+		   System.out.print(subject);
+		   
+			
+		}
+		
 		Random rand=new Random(); 
 		int x=rand.nextInt(100); 
 		int y = x % 2;
 		
 		return  y;
+		
+		
+	}
+	public  int HierarchyActiveComponentList(accessibleChildren asc) throws Exception
+	{
+		StorageAccess virt = new VirtDataAccess();
+		String graphName = CommonConstant.userHierarchy;
+		String lgraphUrl = CommonConstant.userGraphURL;
+		String prefix = CommonConstant.prefix01;
+		List<String> lchild = new LinkedList<String>();
+		
+		
+		do{
+			
+		String query = commonUtil.queryListSubClassNode(graphName, lgraphUrl, CommonConstant.relation00, prefix);
+		ResultSet subClasses = virt.executeQuery(query);
+		
+		while (subClasses.hasNext()) {
+			RDFNode x = subClasses.next().get("cls");
+			lchild.add(x.toString());
+		}
+		
+		
+		String temp = lchild.get(lchild.size() - 1 );
+		asc.setChildrenInput(temp);
+		lchild.remove(temp);
+		lgraphUrl = temp;
+		
+		}while(lchild.size() > 0);
+		//asc.printNode();
+		return asc.getCountChildren();
 		
 		
 	}
