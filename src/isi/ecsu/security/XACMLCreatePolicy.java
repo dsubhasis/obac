@@ -320,7 +320,7 @@ public class XACMLCreatePolicy {
 	 * @throws URISyntaxException
 	 * @throws FileNotFoundException 
 	 */
-	public XACMLCreatePolicy(URI policyId, URI combiningAlgId, String actionValue, String objectName, String subjectName, String policyStoreFile
+	public void XACMLPolicyUpdate(URI policyId, URI combiningAlgId, String actionValue, String objectName, String subjectName, String policyStoreFile
 			) throws UnknownIdentifierException,
 			URISyntaxException, FunctionTypeException, FileNotFoundException {
 
@@ -363,6 +363,14 @@ public class XACMLCreatePolicy {
 		policy.encode(ot);
 		slf4jLogger.info("Policy written at store "+policyStoreFile+ " for @ " +objectName+ "and" +subjectName);
 		
+	}
+
+
+
+	/**
+	 * 
+	 */
+	public XACMLCreatePolicy() {
 	}
 
 }
