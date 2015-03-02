@@ -41,6 +41,10 @@ public class CommonConstant {
 	public static final String XACML_SUBJECTID = "urn:oasis:names:tc:xacml:1.0:subject:subject-id";
 	public static final String XACML_ACTIONID = "urn:oasis:names:tc:xacml:1.0:action:action-id";
 	public static final String XACML_POLICY_DIR = "/Users/subhasis/Documents/workspace/Validator/policyFile/";
+	public static final String XACML_POLICY_STORE = "/Users/subhasis/Documents/workspace/xacml.xml";
+	
+	public static final String PERM_DEFAULT_READ ="read";
+	public static final int POLICY_DENSITY=10;
 	
 	
 	public CommonConstant() {
