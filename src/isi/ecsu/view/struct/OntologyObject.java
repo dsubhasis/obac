@@ -17,8 +17,21 @@ public class OntologyObject {
 	 private List<String> NodeList = new LinkedList<String>();
 	    
 	    private List<String> multipleParent = new LinkedList<String>();
+	    private Map nodeElement = new HashMap();
 	   
 	    /**
+		 * @return the nodeElement
+		 */
+		public final Map getNodeElement() {
+			return nodeElement;
+		}
+		/**
+		 * @param nodeElement the nodeElement to set
+		 */
+		public final void setNodeElement(Map nodeElement) {
+			this.nodeElement = nodeElement;
+		}
+		/**
 	     * 
 	     */
 	    public OntologyObject() {
