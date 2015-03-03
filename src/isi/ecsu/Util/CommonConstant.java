@@ -34,6 +34,23 @@ public class CommonConstant {
 	public static final String prefix01 = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>";
 	public static final String userHierarchy = "http://isirole.org";
 	public static final String userGraphURL = "http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#Business";
+	
+	
+	
+	
+	public static final String SubjectRelation00 = "rdfs:subClassOf";
+	public static final String SubjectRelation01 = "";
+	public static final String SubjectCommonURI ="http://www.semanticweb.org/subhasis/ontologies/2014/6/untitled-ontology-15#";
+	public static final String SubjectOntologyStorage ="http://isirole.org";
+	public static final String SubjectPrefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>";
+	
+	public static final String ObjectRelation00 = "rdfs:subClassOf";
+	public static final String ObjectRelation01 = "";
+	public static final String ObjectCommonURI ="http://www.iwi-iuk.org/material/RDF/Schema/Class/scf#";
+	public static final String ObjectOntologyStorage ="http://dltest.org";
+	public static final String ObjectPrefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>";
+	
+	
 	/*
 	 * XACML Constraints or static values 
 	 */
@@ -41,7 +58,7 @@ public class CommonConstant {
 	public static final String XACML_SUBJECTID = "urn:oasis:names:tc:xacml:1.0:subject:subject-id";
 	public static final String XACML_ACTIONID = "urn:oasis:names:tc:xacml:1.0:action:action-id";
 	public static final String XACML_POLICY_DIR = "/Users/subhasis/Documents/workspace/Validator/policyFile/";
-	public static final String XACML_POLICY_STORE = "/Users/subhasis/Documents/workspace/xacml.xml";
+	public static final String XACML_POLICY_STORE = "/Users/subhasis/Documents/workspace/xacml/";
 	
 	public static final String PERM_DEFAULT_READ ="read";
 	public static final int POLICY_DENSITY=10;

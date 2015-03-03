@@ -11,6 +11,7 @@ import com.sun.xacml.UnknownIdentifierException;
 import com.sun.xacml.combine.OrderedPermitOverridesRuleAlg;
 import com.sun.xacml.cond.FunctionTypeException;
 
+import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.mysqlJava;
 import isi.ecsu.security.XACMLCreatePolicy;
 import isi.ecsu.security.createRandomPolicy;
@@ -21,32 +22,50 @@ import isi.ecsu.security.createRandomPolicy;
 
 /**
  * @author subhasis
- *
+ * 
  */
 public class testCode {
 
 	/**
 	 * @param args
-	 * @throws FunctionTypeException 
-	 * @throws URISyntaxException 
-	 * @throws UnknownIdentifierException 
-	 * @throws FileNotFoundException 
+	 * @throws FunctionTypeException
+	 * @throws URISyntaxException
+	 * @throws UnknownIdentifierException
+	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws UnknownIdentifierException, URISyntaxException, FunctionTypeException, FileNotFoundException {
+	public static void main(String[] args) throws UnknownIdentifierException,
+			URISyntaxException, FunctionTypeException, FileNotFoundException {
 		// TODO Auto-generated method stub
- 
-		//System.out.println("Hello World !");
-		/*URI combiningAlgId = new URI(OrderedPermitOverridesRuleAlg.algId);
-		URI policyId = new URI("GeneratedPolicy");
-		String xacmlStore = "/Users/subhasis/xacmlStore.xml";
-		
-		
-		XACMLCreatePolicy xc = new XACMLCreatePolicy(policyId, combiningAlgId, "ram", "www", "ram", xacmlStore);*/
-		
+
+		// System.out.println("Hello World !");
+		/*
+		 * URI combiningAlgId = new URI(OrderedPermitOverridesRuleAlg.algId);
+		 * URI policyId = new URI("GeneratedPolicy"); String xacmlStore =
+		 * "/Users/subhasis/xacmlStore.xml";
+		 * 
+		 * 
+		 * XACMLCreatePolicy xc = new XACMLCreatePolicy(policyId,
+		 * combiningAlgId, "ram", "www", "ram", xacmlStore);
+		 */
+
 		createRandomPolicy cr = new createRandomPolicy();
-		cr.XacmlPolicyGen("Business", objectGraph, objectUri, subjectRoot, subjectGraph, subjectUri);
-		
-		
-	
+
+		// Test data
+		String objectRoot = "DL-Concept40";
+		String objectGraph = CommonConstant.ObjectOntologyStorage;
+		String objectUri = CommonConstant.ObjectCommonURI;
+		String objectPrefix = CommonConstant.ObjectPrefix;
+		String objectOntologyRelation = CommonConstant.ObjectRelation00;
+
+		String subjectRoot = "Business";
+		String subjectGraph = CommonConstant.SubjectOntologyStorage;
+		String subjectUri = CommonConstant.SubjectCommonURI;
+		String subjectPrefix = CommonConstant.SubjectPrefix;
+		String subjectOntologyRelation = CommonConstant.SubjectRelation00;
+
+		cr.XacmlPolicyGen(objectRoot, objectGraph, objectUri, objectPrefix,
+				objectOntologyRelation, subjectRoot, subjectGraph, subjectUri,
+				subjectPrefix, subjectOntologyRelation);
+
+	}
 }
-}	

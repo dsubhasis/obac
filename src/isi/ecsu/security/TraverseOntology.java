@@ -38,26 +38,27 @@ public class TraverseOntology {
 
 		slf4jLogger.info("View Details " + rootElement + "Graph Name"
 				+ graphName + parentURI);
-		this.getUserView(rootElement, graphName, parentURI);
+		//this.getUserView(rootElement, graphName, parentURI);
 
 	}
 
 	public OntologyObject getUserView(String rootElement, String graphName,
-			String parentURI) throws Throwable {
+			String parentURI, String prefix, String ontologyRelation) throws Throwable {
 		Map<String, List<String>> roleNodeSet = new HashMap<String, List<String>>();
-		String lparentURI = parentURI;
+		String lparentURI = parentURI+rootElement;
 		List<String> unVisited = new LinkedList<String>();
 		int unvisitedCount = 0;
 		RoleAccess raccess = new RoleAccess();
 		StorageAccess virt = new VirtDataAccess();
-		String prefix = CommonConstant.prefix01;
+		OntoObj = new OntologyObject();
+		//String prefix = CommonConstant.prefix01;
 		OntoObj.getNodeElement().put(lparentURI, 1);
 		OntoObj.getNodeList().add(lparentURI);
 		do {
 			// System.out.println("\n Executing Query On  : " +lparentURI+
 			// " Concept" );
 			String query = commonUtil.queryListSubClassNode(graphName,
-					lparentURI, CommonConstant.relation00, prefix);
+					lparentURI, ontologyRelation, prefix);
 			// System.out.println("\nQuery \t" + query);
 			slf4jLogger.info("\nQuery \t" + query);
 			ResultSet subClasses = virt.executeQuery(query);
@@ -66,7 +67,7 @@ public class TraverseOntology {
 				RDFNode x = row.get("cls");
 
 				query = commonUtil.queryListParentClassNode(graphName,
-						x.toString(), CommonConstant.relation00, prefix);
+						x.toString(), ontologyRelation, prefix);
 				ResultSet parentList = virt.executeQuery(query);
 				while (parentList.hasNext()) {
 					QuerySolution parentRow = parentList.next();

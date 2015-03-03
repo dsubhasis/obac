@@ -50,10 +50,9 @@ public class XACMLCreatePolicy {
 
 	}
 
-	
-
-	public Target createRuleTarget(String actionName) throws URISyntaxException,
-			UnknownIdentifierException, FunctionTypeException {
+	public Target createRuleTarget(String actionName)
+			throws URISyntaxException, UnknownIdentifierException,
+			FunctionTypeException {
 		List actions = new ArrayList();
 		// create the Action section
 		List action = new ArrayList();
@@ -137,59 +136,54 @@ public class XACMLCreatePolicy {
 	 * @throws UnknownIdentifierException
 	 */
 
-	public Target createPolicyTarget(String subjectName, String objectName) throws URISyntaxException,
-			UnknownIdentifierException, FunctionTypeException {
-		 List subjects = new ArrayList();
-	        List resources = new ArrayList();
+	public Target createPolicyTarget(String subjectName, String objectName)
+			throws URISyntaxException, UnknownIdentifierException,
+			FunctionTypeException {
+		List subjects = new ArrayList();
+		List resources = new ArrayList();
 
-	        // create the Subject section
-	        List subject = new ArrayList();
-		
-		String subjectMatchId =
-	            "urn:oasis:names:tc:xacml:1.0:function:rfc822Name-match";
+		// create the Subject section
+		List subject = new ArrayList();
 
-	        URI subjectDesignatorType =
-	            new URI("urn:oasis:names:tc:xacml:1.0:data-type:rfc822Name");
-	        URI subjectDesignatorId =
-	            new URI("urn:oasis:names:tc:xacml:1.0:subject:subject-id");
-	        AttributeDesignator subjectDesignator =
-	            new AttributeDesignator(AttributeDesignator.SUBJECT_TARGET,
-	                                    subjectDesignatorType,
-	                                    subjectDesignatorId, false);
+		String subjectMatchId = "urn:oasis:names:tc:xacml:1.0:function:rfc822Name-match";
 
-	        StringAttribute subjectValue =
-	            new StringAttribute(subjectName);
-	        
-	        subject.add(createTargetMatch(TargetMatch.SUBJECT, subjectMatchId,
-	                                      subjectDesignator, subjectValue));
+		URI subjectDesignatorType = new URI(
+				"urn:oasis:names:tc:xacml:1.0:data-type:rfc822Name");
+		URI subjectDesignatorId = new URI(
+				"urn:oasis:names:tc:xacml:1.0:subject:subject-id");
+		AttributeDesignator subjectDesignator = new AttributeDesignator(
+				AttributeDesignator.SUBJECT_TARGET, subjectDesignatorType,
+				subjectDesignatorId, false);
 
-	        // create the Resource section
-	        List resource = new ArrayList();
+		StringAttribute subjectValue = new StringAttribute(subjectName);
 
-	        String resourceMatchId =
-	            "urn:oasis:names:tc:xacml:1.0:function:anyURI-equal";
+		subject.add(createTargetMatch(TargetMatch.SUBJECT, subjectMatchId,
+				subjectDesignator, subjectValue));
 
-	        URI resourceDesignatorType =
-	            new URI("http://www.w3.org/2001/XMLSchema#anyURI");
-	        URI resourceDesignatorId =
-	            new URI("urn:oasis:names:tc:xacml:1.0:resource:resource-id");
-	        AttributeDesignator resourceDesignator =
-	            new AttributeDesignator(AttributeDesignator.RESOURCE_TARGET,
-	                                    resourceDesignatorType,
-	                                    resourceDesignatorId, false);
+		// create the Resource section
+		List resource = new ArrayList();
 
-	        AnyURIAttribute resourceValue =
-	            new AnyURIAttribute(new URI(objectName));
+		String resourceMatchId = "urn:oasis:names:tc:xacml:1.0:function:anyURI-equal";
 
-	        resource.add(createTargetMatch(TargetMatch.RESOURCE, resourceMatchId,
-	                                       resourceDesignator, resourceValue));
+		URI resourceDesignatorType = new URI(
+				"http://www.w3.org/2001/XMLSchema#anyURI");
+		URI resourceDesignatorId = new URI(
+				"urn:oasis:names:tc:xacml:1.0:resource:resource-id");
+		AttributeDesignator resourceDesignator = new AttributeDesignator(
+				AttributeDesignator.RESOURCE_TARGET, resourceDesignatorType,
+				resourceDesignatorId, false);
 
-	        // put the Subject and Resource sections into their lists
-	        subjects.add(subject);
-	        resources.add(resource);
+		AnyURIAttribute resourceValue = new AnyURIAttribute(new URI(objectName));
 
-	        // create & return the new Target
-	        return new Target(subjects, resources, null);
+		resource.add(createTargetMatch(TargetMatch.RESOURCE, resourceMatchId,
+				resourceDesignator, resourceValue));
+
+		// put the Subject and Resource sections into their lists
+		subjects.add(subject);
+		resources.add(resource);
+
+		// create & return the new Target
+		return new Target(subjects, resources, null);
 	}
 
 	private Logger slf4jLogger = LoggerFactory
@@ -318,10 +312,11 @@ public class XACMLCreatePolicy {
 	 * @throws UnknownIdentifierException
 	 * @throws FunctionTypeException
 	 * @throws URISyntaxException
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
-	public void XACMLPolicyUpdate(URI policyId, URI combiningAlgId, String actionValue, String objectName, String subjectName, String policyStoreFile
-			) throws UnknownIdentifierException,
+	public String XACMLPolicyUpdate(URI policyId, URI combiningAlgId,
+			String actionValue, String subjectName, String objectName,
+			String policyStoreFile) throws UnknownIdentifierException,
 			URISyntaxException, FunctionTypeException, FileNotFoundException {
 
 		setPolicyId(policyId);
@@ -332,7 +327,8 @@ public class XACMLCreatePolicy {
 		RuleCombiningAlgorithm combiningAlg = (RuleCombiningAlgorithm) (factory
 				.createAlgorithm(combiningAlgId));
 		// add a description for the policy
-		String description = "This policy applies to any accounts at " + objectName 
+		String description = "This policy applies to any accounts at "
+				+ objectName
 				+ "accessing server.example.com. The one Rule applies to the "
 				+ "specific action of doing a CVS commit, but other Rules could "
 				+ "be defined that handled other actions. In this case, only "
@@ -356,16 +352,17 @@ public class XACMLCreatePolicy {
 				ruleList));
 
 		// finally, encode the policy and print it to standard out
-		//policy.encode(System.out, new Indenter());
-	slf4jLogger.info("Policy Created for "+objectName+ "and" +subjectName);
-		
+		// policy.encode(System.out, new Indenter());
+		slf4jLogger.info("Policy Created for " + objectName + "and"
+				+ subjectName);
+
 		OutputStream ot = new FileOutputStream(new File(policyStoreFile));
 		policy.encode(ot);
-		slf4jLogger.info("Policy written at store "+policyStoreFile+ " for @ " +objectName+ "and" +subjectName);
-		
+		slf4jLogger.info("Policy written at store " + policyStoreFile
+				+ " for @ " + objectName + "and" + subjectName);
+		return policyStoreFile;
+
 	}
-
-
 
 	/**
 	 * 
