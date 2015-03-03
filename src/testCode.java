@@ -13,6 +13,7 @@ import com.sun.xacml.cond.FunctionTypeException;
 
 import isi.ecsu.Util.mysqlJava;
 import isi.ecsu.security.XACMLCreatePolicy;
+import isi.ecsu.security.createRandomPolicy;
 
 /**
  * 
@@ -35,12 +36,17 @@ public class testCode {
 		// TODO Auto-generated method stub
  
 		//System.out.println("Hello World !");
-		URI combiningAlgId = new URI(OrderedPermitOverridesRuleAlg.algId);
+		/*URI combiningAlgId = new URI(OrderedPermitOverridesRuleAlg.algId);
 		URI policyId = new URI("GeneratedPolicy");
 		String xacmlStore = "/Users/subhasis/xacmlStore.xml";
 		
 		
-		XACMLCreatePolicy xc = new XACMLCreatePolicy(policyId, combiningAlgId, "ram", "www", "ram", xacmlStore);
-	}
-
+		XACMLCreatePolicy xc = new XACMLCreatePolicy(policyId, combiningAlgId, "ram", "www", "ram", xacmlStore);*/
+		
+		createRandomPolicy cr = new createRandomPolicy();
+		cr.XacmlPolicyGen("Business", objectGraph, objectUri, subjectRoot, subjectGraph, subjectUri);
+		
+		
+	
 }
+}	
