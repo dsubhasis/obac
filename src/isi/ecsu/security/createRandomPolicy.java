@@ -61,8 +61,9 @@ public class createRandomPolicy {
 				oo.getNodeElement().put(litr.next(), 0);
 			}*/
 			
-			URI policyId = new URI(litr.next());
+			
 			UID userId = new UID();
+			URI policyId = new URI("Policy"+userId.toString());
 			String xacmlStoreFile = xacmlStore+userId+".xml";
 
 			//oo.getNodeElement().put(litr.next(), 1);
@@ -86,7 +87,7 @@ public class createRandomPolicy {
 		OntologyObject lSubject = new OntologyObject();
 
 		TraverseOntology tOnto = new TraverseOntology();
-		String xacmlStore = CommonConstant.XACML_POLICY_STORE + subjectRoot;
+		String xacmlStore = CommonConstant.XACML_POLICY_STORE+"dummy-Policy-file";
 
 		try {
 			lObject = tOnto.getUserView(objectRoot, objectGraph, objectUri, objectPrefix, objectOntologyRelation);
@@ -102,12 +103,13 @@ public class createRandomPolicy {
 
 		while (litrSubj.hasNext()) {
 			lobject = litrSubj.next();
-			System.out.println(lobject);
+			//System.out.println(lobject);
 			
 
 			String outPut = rendomPolicyGen(lObject, CommonConstant.POLICY_DENSITY,
 				lobject, xacmlStore,
 					CommonConstant.PERM_DEFAULT_READ);
+			System.out.println(outPut);
 
 		}
 

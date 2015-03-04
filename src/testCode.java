@@ -51,7 +51,7 @@ public class testCode {
 		createRandomPolicy cr = new createRandomPolicy();
 
 		// Test data
-		String objectRoot = "DL-Concept40";
+		String objectRoot = "DL-Concept20";
 		String objectGraph = CommonConstant.ObjectOntologyStorage;
 		String objectUri = CommonConstant.ObjectCommonURI;
 		String objectPrefix = CommonConstant.ObjectPrefix;
