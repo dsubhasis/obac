@@ -75,7 +75,6 @@ public class XACMLCreatePolicy {
 
 	public Apply createRuleCondition() throws URISyntaxException {
 		List conditionArgs = new ArrayList();
-		// get the function that the condition uses
 		FunctionFactory factory = FunctionFactory.getConditionInstance();
 		Function conditionFunction = null;
 		try {
@@ -83,10 +82,8 @@ public class XACMLCreatePolicy {
 					.createFunction("urn:oasis:names:tc:xacml:1.0:function:"
 							+ "string-equal");
 		} catch (Exception e) {
-			// see comment in createTargetMatch()
 			return null;
 		}
-		// now create the apply section that gets the designator value
 		List applyArgs = new ArrayList();
 		factory = FunctionFactory.getGeneralInstance();
 		Function applyFunction = null;
@@ -95,7 +92,6 @@ public class XACMLCreatePolicy {
 					.createFunction("urn:oasis:names:tc:xacml:1.0:function:"
 							+ "string-one-and-only");
 		} catch (Exception e) {
-			// see comment in createTargetMatch()
 			return null;
 		}
 		URI designatorType = new URI("http://www.w3.org/2001/XMLSchema#string");
@@ -106,35 +102,20 @@ public class XACMLCreatePolicy {
 				designatorId, false, designatorIssuer);
 		applyArgs.add(designator);
 		Apply apply = new Apply(applyFunction, applyArgs, false);
-		// add the new apply element to the list of inputs to the condition
 		conditionArgs.add(apply);
-		// create an AttributeValue and add it to the input list
 		StringAttribute value = new StringAttribute("developers");
 		conditionArgs.add(value);
-		// finally, create & return our Condition
 		return new Apply(conditionFunction, conditionArgs, true);
 	}
 
 	public Rule createRule(String actionValue) throws URISyntaxException,
 			UnknownIdentifierException, FunctionTypeException {
-		// define the identifier for the rule
 		URI ruleId = new URI("CommitRule");
-		// define the effect for the Rule
 		int effect = Result.DECISION_PERMIT;
-		// get the Target for the rule
 		Target target = createRuleTarget(actionValue);
-		// get the Condition for the rule
 		Apply condition = createRuleCondition();
 		return new Rule(ruleId, effect, null, target, condition);
 	}
-
-	/**
-	 * Command-line routine that bundles together all the information needed to
-	 * create a Policy and then encodes the Policy, printing to standard out.
-	 * 
-	 * @throws FunctionTypeException
-	 * @throws UnknownIdentifierException
-	 */
 
 	public Target createPolicyTarget(String subjectName, String objectName)
 			throws URISyntaxException, UnknownIdentifierException,
@@ -159,12 +140,8 @@ public class XACMLCreatePolicy {
 
 		subject.add(createTargetMatch(TargetMatch.SUBJECT, subjectMatchId,
 				subjectDesignator, subjectValue));
-
-		// create the Resource section
 		List resource = new ArrayList();
-
 		String resourceMatchId = "urn:oasis:names:tc:xacml:1.0:function:anyURI-equal";
-
 		URI resourceDesignatorType = new URI(
 				"http://www.w3.org/2001/XMLSchema#anyURI");
 		URI resourceDesignatorId = new URI(
@@ -172,17 +149,11 @@ public class XACMLCreatePolicy {
 		AttributeDesignator resourceDesignator = new AttributeDesignator(
 				AttributeDesignator.RESOURCE_TARGET, resourceDesignatorType,
 				resourceDesignatorId, false);
-
 		AnyURIAttribute resourceValue = new AnyURIAttribute(new URI(objectName));
-
 		resource.add(createTargetMatch(TargetMatch.RESOURCE, resourceMatchId,
 				resourceDesignator, resourceValue));
-
-		// put the Subject and Resource sections into their lists
 		subjects.add(subject);
 		resources.add(resource);
-
-		// create & return the new Target
 		return new Target(subjects, resources, null);
 	}
 
@@ -195,33 +166,15 @@ public class XACMLCreatePolicy {
 	private Rule defaultRule;
 	private List ruleList;
 	private Policy policy;
-
-	/**
-	 * @return the policyId
-	 */
 	public final URI getPolicyId() {
 		return policyId;
 	}
-
-	/**
-	 * @param policyId
-	 *            the policyId to set
-	 */
 	public final void setPolicyId(URI policyId) {
 		this.policyId = policyId;
 	}
-
-	/**
-	 * @return the combiningAlgId
-	 */
 	public final URI getCombiningAlgId() {
 		return combiningAlgId;
 	}
-
-	/**
-	 * @param combiningAlgId
-	 *            the combiningAlgId to set
-	 */
 	public final void setCombiningAlgId(URI combiningAlgId) {
 		this.combiningAlgId = combiningAlgId;
 	}

@@ -6,6 +6,7 @@ package isi.ecsu.view.struct.impl;
 import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
 import isi.ecsu.security.RoleAccess;
+import isi.ecsu.security.TraverseOntology;
 import isi.ecsu.view.struct.ViewObject;
 
 import java.sql.SQLException;
@@ -13,6 +14,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
@@ -31,6 +35,8 @@ public class UserRootView {
 	private String userId;
 
 	private List<String> unVisited = new LinkedList<String>();
+	private Logger slf4jLogger = LoggerFactory
+			.getLogger(UserRootView.class);
 
 	public UserRootView() {
 
@@ -53,7 +59,8 @@ public class UserRootView {
 			// " Concept" );
 			String query = commonUtil.queryListSubClassNode(graphName,
 					lparentURI, CommonConstant.relation00, prefix);
-			System.out.println("\nQuery \t" + query);
+			//System.out.println("\nQuery \t" + query);
+            slf4jLogger.info("\nQuery \t" + query);
 			ResultSet subClasses = virt.executeQuery(query);
 			while (subClasses.hasNext()) {
 				QuerySolution row = subClasses.next();
@@ -69,9 +76,12 @@ public class UserRootView {
 				if (parentList.getRowNumber() > 1) {
 					vo.getMultipleParent().add(x.toString());
 				}
-				System.out.println("\n For the Concept  " + x.toString()
+				slf4jLogger.info("\n For the Concept  " + x.toString()
 						+ "  Number of Paernt Found "
 						+ parentList.getRowNumber());
+				/*System.out.println("\n For the Concept  " + x.toString()
+						+ "  Number of Paernt Found "
+						+ parentList.getRowNumber());*/
 				int permChild = raccess.getPermission(x.toString(), "roleName");
 
 				if (permRoot == 1 || permChild == 1) {

@@ -5,6 +5,7 @@ package isi.ecsu.security;
 
 import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
+import isi.ecsu.view.struct.OntologyObject;
 import isi.ecsu.view.struct.accessibleChildren;
 import isi.ecsu.view.struct.impl.StorageAccess;
 import isi.ecsu.view.struct.impl.MysqlDataAccess;
@@ -15,11 +16,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
-import java.util.logging.Logger;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.sun.xacml.ctx.ResponseCtx;
+import com.sun.xacml.ctx.Result;
 
 /**
  * @author subhasis
@@ -40,13 +47,15 @@ public class RoleAccess {
 	private String userId;
 	private String perMission;
 	private accessibleChildren asc ;
+	private OntologyObject subjectDAGMember;
+	private OntologyObject objectDAGMember;
 	/**
 	 * @return the roleName
 	 */
 	public String getRoleName() {
 		return roleName;
 	}
-	private final static Logger LOGGER = Logger.getLogger(RoleAccess.class.getName());
+	private Logger slf4jLogger = LoggerFactory.getLogger(RoleAccess.class);
 	/**
 	 * @param roleName the roleName to set
 	 */
@@ -113,12 +122,18 @@ public class RoleAccess {
 	public int getPermission(String objectName, String roleName) throws Exception
 	{
 		
+		
+		//String 
+		
+		
+		
+		
 		//StorageAccess st = new mysqlDataAccess();
 		//String query ="SELECT permission from roleTable where user=\"" + objectName + "\";";
 		//ArrayList lroleName = st.getResultArrayList("roleName", query);
 		
 		asc = new accessibleChildren();
-		int numberOfActiveSubject = HierarchyActiveComponentList(asc);
+		//int numberOfActiveSubject = HierarchyActiveComponentList(asc);
 		Iterator itl = asc.getChildren().iterator();
 		while(itl.hasNext())
 		{
@@ -136,34 +151,65 @@ public class RoleAccess {
 		
 		
 	}
-	public  int HierarchyActiveComponentList(accessibleChildren asc) throws Exception
+	public  void HierarchyActiveComponentList(accessibleChildren asc, String subjectName, String objectName) throws Throwable 
 	{
-		StorageAccess virt = new VirtDataAccess();
+		subjectDAGMember = new OntologyObject();
+		XacmlRequestGenerator xrg = new XacmlRequestGenerator();
 		String graphName = CommonConstant.userHierarchy;
 		String lgraphUrl = CommonConstant.userGraphURL;
 		String prefix = CommonConstant.prefix01;
+		String lrelation =  CommonConstant.SubjectRelation00;
+		String Prefix = CommonConstant.SubjectPrefix;
+		
+		
+		String subGraphName = CommonConstant.SubjectOntologyStorage;
+		String lsubGraphUrl = CommonConstant.SubjectCommonURI;
+		String lsubRelation = CommonConstant.SubjectRelation00;
+		String sPrefix = CommonConstant.SubjectPrefix;
+		
+		String objGraphName = CommonConstant.ObjectOntologyStorage;
+		String lobjGraphUrl = CommonConstant.ObjectCommonURI;
+		String lobjRelation = CommonConstant.ObjectRelation00;
+		String oPrefix = CommonConstant.ObjectPrefix;
+		
+		
 		List<String> lchild = new LinkedList<String>();
 		
+		slf4jLogger.info("Configuration of Logger for Group access ");
 		
-		do{
-			
-		String query = commonUtil.queryListSubClassNode(graphName, lgraphUrl, CommonConstant.relation00, prefix);
-		ResultSet subClasses = virt.executeQuery(query);
+		TraverseOntology objAccess = new TraverseOntology();
+		subjectDAGMember = objAccess.getUserView(subjectName, subGraphName, lsubGraphUrl, lsubRelation, sPrefix);
+		objectDAGMember = objAccess.getParentListRecursive(objectName, objGraphName, lobjGraphUrl, lobjRelation, oPrefix);
 		
-		while (subClasses.hasNext()) {
-			RDFNode x = subClasses.next().get("cls");
-			lchild.add(x.toString());
+		Iterator<String> lsub = null;
+		Iterator<String> lobj = null;
+		lsub = subjectDAGMember.getNodeList().iterator();
+		
+		while(lsub.hasNext())
+		{
+			String lsubject = lsub.next();
+			lobj = objectDAGMember.getNodeList().iterator();
+			while(lobj.hasNext())
+			{
+				String lobject = lobj.next();
+			ResponseCtx ct	= xrg.getPermissionValue(lsubject, lobject, null, null);
+
+			Set<Result> results  = ct.getResults();
+			Result result = results.iterator().next();
+			if(result.getDecision() == 1)
+			{
+				//result.getDecision();
+			}
+			if(result.getDecision() == 2)
+			{
+				
+			}
+				
+			}
 		}
 		
 		
-		String temp = lchild.get(lchild.size() - 1 );
-		asc.setChildrenInput(temp);
-		lchild.remove(temp);
-		lgraphUrl = temp;
 		
-		}while(lchild.size() > 0);
-		//asc.printNode();
-		return asc.getCountChildren();
 		
 		
 	}

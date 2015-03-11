@@ -4,19 +4,23 @@
 package isi.ecsu.security;
 
 import isi.ecsu.Util.CommonConstant;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.sun.xacml.EvaluationCtx;
 import com.sun.xacml.Indenter;
 import com.sun.xacml.PDP;
 import com.sun.xacml.PDPConfig;
 import com.sun.xacml.ParsingException;
+import com.sun.xacml.PolicyTreeElement;
 import com.sun.xacml.attr.AnyURIAttribute;
 import com.sun.xacml.attr.RFC822NameAttribute;
 import com.sun.xacml.attr.StringAttribute;
@@ -79,6 +83,7 @@ public class XacmlRequestGenerator {
 		final RequestCtx requestUser = createRequest(subjectId, value, groupId, stringAttribValue, resource, actionId);
 		requestUser.encode(System.out, new Indenter());
 		final ResponseCtx response = pdp.evaluate(requestUser);
+	
 		return response;
 	}
 	

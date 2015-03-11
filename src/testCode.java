@@ -66,6 +66,7 @@ public class testCode {
 		cr.XacmlPolicyGen(objectRoot, objectGraph, objectUri, objectPrefix,
 				objectOntologyRelation, subjectRoot, subjectGraph, subjectUri,
 				subjectPrefix, subjectOntologyRelation);
+		
 
 	}
 }

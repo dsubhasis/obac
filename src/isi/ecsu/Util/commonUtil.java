@@ -58,9 +58,8 @@ public class commonUtil {
 		return query;
 	}
 public static String queryListParentClassNode(String graphName , String childURI, String relation00 , String Prefix){
-		
-		String query;
-		
+	
+		String query = null;
 		query = Prefix + " SELECT ?cls FROM <"+ graphName +"> WHERE { <"  + childURI +">  " +relation00 + "  ?cls}";
 		return query;
 	}
