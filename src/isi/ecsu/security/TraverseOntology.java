@@ -3,18 +3,13 @@
  */
 package isi.ecsu.security;
 
-import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
 import isi.ecsu.view.struct.OntologyObject;
-import isi.ecsu.view.struct.ViewObject;
 import isi.ecsu.view.struct.impl.StorageAccess;
 import isi.ecsu.view.struct.impl.VirtDataAccess;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +24,7 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 
 public class TraverseOntology {
 
-	private Logger slf4jLogger = LoggerFactory
+	private final Logger slf4jLogger = LoggerFactory
 			.getLogger(TraverseOntology.class);
 	private OntologyObject OntoObj;
 
@@ -90,7 +85,7 @@ public class TraverseOntology {
 				unVisited.remove(lparentURI);
 			}
 		} while (unvisitedCount > 0);
-		System.out.println("\n Analysis Done Generating View for the Role ");
+		slf4jLogger.info("\n Analysis Done Generating View for the Role ");
 		return OntoObj;
 	}
 	public OntologyObject getParentListRecursive(String objectName,  String graphName, String objectURI, String relation, String Prefix) throws Exception
@@ -122,7 +117,7 @@ public class TraverseOntology {
 						if (parentList.getRowNumber() > 1) {
 							OntoObj.getMultipleParent().add(x.toString());
 						}
-						System.out.println("\n For the Concept  " + x.toString()
+						slf4jLogger.debug("\n For the Concept  " + x.toString()
 								+ "  Number of Paernt Found "
 								+ parentList.getRowNumber());
 

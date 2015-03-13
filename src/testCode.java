@@ -35,38 +35,19 @@ public class testCode {
 	 */
 	public static void main(String[] args) throws UnknownIdentifierException,
 			URISyntaxException, FunctionTypeException, FileNotFoundException {
-		// TODO Auto-generated method stub
-
-		// System.out.println("Hello World !");
-		/*
-		 * URI combiningAlgId = new URI(OrderedPermitOverridesRuleAlg.algId);
-		 * URI policyId = new URI("GeneratedPolicy"); String xacmlStore =
-		 * "/Users/subhasis/xacmlStore.xml";
-		 * 
-		 * 
-		 * XACMLCreatePolicy xc = new XACMLCreatePolicy(policyId,
-		 * combiningAlgId, "ram", "www", "ram", xacmlStore);
-		 */
-
 		createRandomPolicy cr = new createRandomPolicy();
-
-		// Test data
 		String objectRoot = "DL-Concept20";
 		String objectGraph = CommonConstant.ObjectOntologyStorage;
 		String objectUri = CommonConstant.ObjectCommonURI;
 		String objectPrefix = CommonConstant.ObjectPrefix;
 		String objectOntologyRelation = CommonConstant.ObjectRelation00;
-
 		String subjectRoot = "Business";
 		String subjectGraph = CommonConstant.SubjectOntologyStorage;
 		String subjectUri = CommonConstant.SubjectCommonURI;
 		String subjectPrefix = CommonConstant.SubjectPrefix;
 		String subjectOntologyRelation = CommonConstant.SubjectRelation00;
-
 		cr.XacmlPolicyGen(objectRoot, objectGraph, objectUri, objectPrefix,
 				objectOntologyRelation, subjectRoot, subjectGraph, subjectUri,
 				subjectPrefix, subjectOntologyRelation);
-		
-
 	}
 }

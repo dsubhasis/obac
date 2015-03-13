@@ -136,7 +136,23 @@ public class XACMLCreatePolicy {
 				AttributeDesignator.SUBJECT_TARGET, subjectDesignatorType,
 				subjectDesignatorId, false);
 
-		StringAttribute subjectValue = new StringAttribute(subjectName);
+		
+		URI svalue = new URI(subjectName);
+		String spath = svalue.getPath();
+		String host= svalue.getHost();
+		String delims = "#";
+		String[] nodeName = subjectName.split(delims);
+		int n = nodeName.length;
+		
+		String sp = spath.substring(spath.lastIndexOf("/"));
+		
+		sp = spath.replaceAll("/", ".");
+		//sp = sp.replaceFirst(".", "@");
+		
+		final String finalSubject = nodeName[n - 1]+"@"+host+sp;
+		
+		
+		StringAttribute subjectValue = new StringAttribute(finalSubject);
 
 		subject.add(createTargetMatch(TargetMatch.SUBJECT, subjectMatchId,
 				subjectDesignator, subjectValue));
@@ -269,7 +285,7 @@ public class XACMLCreatePolicy {
 	 */
 	public String XACMLPolicyUpdate(URI policyId, URI combiningAlgId,
 			String actionValue, String subjectName, String objectName,
-			String policyStoreFile) throws UnknownIdentifierException,
+			String policyStoreFile, int resultDecsiion) throws UnknownIdentifierException,
 			URISyntaxException, FunctionTypeException, FileNotFoundException {
 
 		setPolicyId(policyId);
@@ -281,34 +297,25 @@ public class XACMLCreatePolicy {
 				.createAlgorithm(combiningAlgId));
 		// add a description for the policy
 		String description = "This policy applies to any accounts at "
-				+ objectName
+				+ policyId
 				+ "accessing server.example.com. The one Rule applies to the "
 				+ "specific action of doing a CVS commit, but other Rules could "
 				+ "be defined that handled other actions. In this case, only "
 				+ "certain groups of people are allowed to commit. There is a "
 				+ "final fall-through rule that always returns Deny.";
-		// create the target for the policy
-
 		setPolicyTarget(createPolicyTarget(subjectName, objectName));
 		setCommitRule(createRule(actionValue));
-		setDefaultRule(new Rule(new URI("FinalRule"), Result.DECISION_DENY,
+		setDefaultRule(new Rule(new URI("FinalRule"), resultDecsiion,
 				null, null, null));
-		// Rule defaultRule = new Rule(new URI("FinalRule"),
-		// Result.DECISION_DENY,
-		// null, null, null);
-		// create a list for the rules and add our rules in order
 		ruleList = new ArrayList();
 		ruleList.add(commitRule);
 		ruleList.add(defaultRule);
-		// create the policy
 		setPolicy(new Policy(policyId, combiningAlg, description, policyTarget,
 				ruleList));
 
-		// finally, encode the policy and print it to standard out
-		// policy.encode(System.out, new Indenter());
 		slf4jLogger.info("Policy Created for " + objectName + "and"
 				+ subjectName);
-
+		
 		OutputStream ot = new FileOutputStream(new File(policyStoreFile));
 		policy.encode(ot);
 		slf4jLogger.info("Policy written at store " + policyStoreFile

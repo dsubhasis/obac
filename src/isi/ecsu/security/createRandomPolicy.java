@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+import java.util.Random;
 
 import com.sun.xacml.UnknownIdentifierException;
 import com.sun.xacml.combine.OrderedPermitOverridesRuleAlg;
@@ -46,30 +47,32 @@ public class createRandomPolicy {
 		int SizeOfData = lNodeList.size();
 		ListIterator<String> litr = null;
 		litr = lNodeList.listIterator();
+		int resultDecession = 0;
+		int tempValue = 0;
 		while (litr.hasNext()) {
-			int randno = (int) (Math.random() * SizeOfData);
-		/*	if (randno <= positiveChance * SizeOfData / 100) {
-				URI policyId = new URI(litr.next());
-
-				oo.getNodeElement().put(litr.next(), 1);
-
-				xcpl.XACMLPolicyUpdate(policyId, combiningAlgId, actionValue,
-						objectName, litr.next(), xacmlStore);
-
-			} else {
-
-				oo.getNodeElement().put(litr.next(), 0);
-			}*/
+			Random random = new Random();
+			int num = random.nextInt(2)+1;
+		if (num > 1) {
+			System.out.println("Y\n\n");
 			
+			random = new Random();
+			resultDecession = random.nextInt(2);
+			System.out.println(resultDecession);
 			
 			UID userId = new UID();
 			URI policyId = new URI("Policy"+userId.toString());
 			String xacmlStoreFile = xacmlStore+userId+".xml";
-
-			//oo.getNodeElement().put(litr.next(), 1);
-
 			output = xcpl.XACMLPolicyUpdate(policyId, combiningAlgId, actionValue,
-					subjectName, litr.next(), xacmlStoreFile);
+					subjectName, litr.next(), xacmlStoreFile, resultDecession);
+
+			} else {
+
+				System.out.println("N\n\n");
+				//oo.getNodeElement().put(litr.next(), 0);
+			}
+			
+			
+			
 			
 		}
 		return output;
@@ -109,7 +112,7 @@ public class createRandomPolicy {
 			String outPut = rendomPolicyGen(lObject, CommonConstant.POLICY_DENSITY,
 				lobject, xacmlStore,
 					CommonConstant.PERM_DEFAULT_READ);
-			System.out.println(outPut);
+			//System.out.println(outPut);
 
 		}
 
