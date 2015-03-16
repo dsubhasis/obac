@@ -196,13 +196,29 @@ public class RoleAccess {
 
 			Set<Result> results  = ct.getResults();
 			Result result = results.iterator().next();
+			int option = result.getDecision();
+			switch(option)
+			{
+			case 0: {
+				
+			}
+			case 1: {
+				
+			}
+			case 2 :{
+				slf4jLogger.info("XACML Plolicy Error");
+			}
+			case 3 : {
+				slf4jLogger.info("Systems Error");
+			}
+			}
+			if(result.getDecision() == 0)
+			{
+				//result.getDecision(); Yes
+			}
 			if(result.getDecision() == 1)
 			{
-				//result.getDecision();
-			}
-			if(result.getDecision() == 2)
-			{
-				
+				// no
 			}
 				
 			}

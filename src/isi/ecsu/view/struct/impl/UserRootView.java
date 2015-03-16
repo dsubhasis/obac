@@ -49,26 +49,37 @@ public class UserRootView {
 		Map<String, List<String>> roleNodeSet = new HashMap<String, List<String>>();
 		String lparentURI = parentURI;
 		int unvisitedCount = 0;
+		int permValue = 0;
 		RoleAccess raccess = new RoleAccess();
 		StorageAccess virt = new VirtDataAccess();
 		String prefix = CommonConstant.prefix01;
 		vo.getNodeElement().put(lparentURI, 1);
 		vo.getPositiveList().add(lparentURI);
 		do {
-			// System.out.println("\n Executing Query On  : " +lparentURI+
-			// " Concept" );
 			String query = commonUtil.queryListSubClassNode(graphName,
 					lparentURI, CommonConstant.relation00, prefix);
-			//System.out.println("\nQuery \t" + query);
             slf4jLogger.info("\nQuery \t" + query);
 			ResultSet subClasses = virt.executeQuery(query);
+			
+			
 			while (subClasses.hasNext()) {
 				QuerySolution row = subClasses.next();
 				RDFNode x = row.get("cls");
-				int permRoot = raccess.getPermission(x.toString(), "roleName");
+				int permRoot = raccess.getPermission(x.toString(), user);
+				if(permRoot == 3)
+				{
+					permValue = permRoot;
+				}
+				
+				
+				
 				query = commonUtil.queryListParentClassNode(graphName,
 						x.toString(), CommonConstant.relation00, prefix);
 				ResultSet parentList = virt.executeQuery(query);
+				
+				
+				
+				
 				while (parentList.hasNext()) {
 					QuerySolution parentRow = parentList.next();
 					RDFNode p = parentRow.get("cls");

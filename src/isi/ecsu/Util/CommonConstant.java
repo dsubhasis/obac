@@ -22,7 +22,7 @@ public class CommonConstant {
 	 * Virtuoso database common constraints 
 	 */
 	
-	public static final String virtUrl = "jdbc:virtuoso://10.10.1.15:1111";
+	public static final String virtUrl = "jdbc:virtuoso://localhost:1111";
 	public static final String virtUser = "dba";
 	public static final String virtPassword = "dba";
 	public static final String topRelations = "";

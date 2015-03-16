@@ -30,22 +30,23 @@ public class createRandomPolicy {
 	/**
 	 * 
 	 */
-	public createRandomPolicy() {
+/*	public createRandomPolicy() {
 
 		// TODO Auto-generated constructor stub
-	}
+	}*/
 
-	public String rendomPolicyGen(OntologyObject oo, int positiveChance,
+	public void rendomPolicyGen(OntologyObject oo, int positiveChance,
 			String subjectName, String xacmlStore, String actionValue)
 			throws FileNotFoundException, UnknownIdentifierException,
 			URISyntaxException, FunctionTypeException {
 		List lNodeList = oo.getNodeList();
 		Map lelement = oo.getNodeElement();
-		XACMLCreatePolicy xcpl = new XACMLCreatePolicy();
-        String output = null;
+	     XACMLCreatePolicy xcpl;
+		 xcpl = new XACMLCreatePolicy();
+        
 		URI combiningAlgId = new URI(OrderedPermitOverridesRuleAlg.algId);
 		int SizeOfData = lNodeList.size();
-		ListIterator<String> litr = null;
+		ListIterator<String> litr;
 		litr = lNodeList.listIterator();
 		int resultDecession = 0;
 		int tempValue = 0;
@@ -62,23 +63,17 @@ public class createRandomPolicy {
 			UID userId = new UID();
 			URI policyId = new URI("Policy"+userId.toString());
 			String xacmlStoreFile = xacmlStore+userId+".xml";
-			output = xcpl.XACMLPolicyUpdate(policyId, combiningAlgId, actionValue,
+			String output = xcpl.XACMLPolicyUpdate(policyId, combiningAlgId, actionValue,
 					subjectName, litr.next(), xacmlStoreFile, resultDecession);
 
 			} else {
+				
 
 				System.out.println("N\n\n");
 				//oo.getNodeElement().put(litr.next(), 0);
 			}
-			
-			
-			
-			
 		}
-		return output;
-
 	}
-
 	public void XacmlPolicyGen(String objectRoot, String objectGraph,
 			String objectUri, String objectPrefix,
 			String objectOntologyRelation, String subjectRoot,
@@ -109,7 +104,7 @@ public class createRandomPolicy {
 			//System.out.println(lobject);
 			
 
-			String outPut = rendomPolicyGen(lObject, CommonConstant.POLICY_DENSITY,
+			 rendomPolicyGen(lObject, CommonConstant.POLICY_DENSITY,
 				lobject, xacmlStore,
 					CommonConstant.PERM_DEFAULT_READ);
 			//System.out.println(outPut);

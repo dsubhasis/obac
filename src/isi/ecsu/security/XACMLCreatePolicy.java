@@ -57,11 +57,11 @@ public class XACMLCreatePolicy {
 		// create the Action section
 		List action = new ArrayList();
 		String actionMatchId = "urn:oasis:names:tc:xacml:1.0:function:string-equal";
-		URI actionDesignatorType = new URI(
+		final URI actionDesignatorType = new URI(
 				"http://www.w3.org/2001/XMLSchema#string");
-		URI actionDesignatorId = new URI(
+		final URI actionDesignatorId = new URI(
 				"urn:oasis:names:tc:xacml:1.0:action:action-id");
-		AttributeDesignator actionDesignator = new AttributeDesignator(
+		final AttributeDesignator actionDesignator = new AttributeDesignator(
 				AttributeDesignator.ACTION_TARGET, actionDesignatorType,
 				actionDesignatorId, false);
 		StringAttribute actionValue = new StringAttribute(actionName);

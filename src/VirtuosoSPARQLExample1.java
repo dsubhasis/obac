@@ -26,6 +26,7 @@ public class VirtuosoSPARQLExample1 {
 		OntModel lmodel = null;
 		try {
 			OntModel om = vw.roleView(lmodel, roleName, rootObject);
+			System.out.println("Test");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
