@@ -18,9 +18,10 @@ public class VirtuosoSPARQLExample1 {
 	 * Executes a SPARQL query against a virtuoso url and prints results.
 	 */
 	public static void main(String[] args) {
-		String virtUrl = "jdbc:virtuoso://localhost:1111";
+		/*String virtUrl = "jdbc:virtuoso://localhost:1111";
 		VirtGraph vg = commonUtil.virtConnect("dba", "dba", virtUrl);
 		String queryString = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT * FROM <http://ecsu.org> WHERE {  ?p skos:prefLabel ?q .}";
+*/	
 		View vw = new ViewGenerationModule();
 		String roleName = null, rootObject = "DL-Concept40";
 		OntModel lmodel = null;

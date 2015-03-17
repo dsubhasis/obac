@@ -66,7 +66,7 @@ public class UserRootView {
 				QuerySolution row = subClasses.next();
 				RDFNode x = row.get("cls");
 				int permRoot = raccess.getPermission(x.toString(), user);
-				if(permRoot == 3)
+ 				if(permRoot == 3)
 				{
 					permValue = permRoot;
 				}
