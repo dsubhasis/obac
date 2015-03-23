@@ -17,7 +17,22 @@ public class ViewObject {
     private List<String> positiveList = new LinkedList<String>();
     private List<String> negativeList = new LinkedList<String>();
     private List<String> multipleParent = new LinkedList<String>();
-    private Map nodeElement = new HashMap();
+    private visitLog nodeVisitLog = new visitLog();
+    /**
+	 * @return the nodeVisitLog
+	 */
+	public visitLog getNodeVisitLog() {
+		return nodeVisitLog;
+	}
+	/**
+	 * @param nodeVisitLog the nodeVisitLog to set
+	 */
+	public void setNodeVisitLog(visitLog nodeVisitLog) {
+		this.nodeVisitLog = nodeVisitLog;
+	}
+	private Map nodeElement = new HashMap();
+    
+    
     /**
      * 
      */

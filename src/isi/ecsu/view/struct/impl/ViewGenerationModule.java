@@ -47,10 +47,10 @@ public class ViewGenerationModule implements View {
 	 * @return user specific view in the form of OntModel of
 	 * @throws Exception 
 	 */
-	public OntModel viewModel(String user, String role, String rootNode, String relationNode) throws Exception{
+	/*public OntModel viewModel(String user, String role, String rootNode, String relationNode) throws Exception{
 		OntModel lOntModel = ModelFactory.createOntologyModel();
 		RoleAccess ras = new RoleAccess();
-		ArrayList  roleName = ras.getRoleName(user);
+		ArrayList  roleName = ras.getRoleName();
 		for(int i =0; i<= roleName.size(); i++)
 		{
 			 lOntModel = roleView(lOntModel, roleName.get(i).toString(), rootNode);
@@ -58,7 +58,7 @@ public class ViewGenerationModule implements View {
 		
        
 		return lOntModel;
-	}
+	}*/
 	/**
 	 * @author subhasis
 	 * @category
@@ -91,5 +91,12 @@ public class ViewGenerationModule implements View {
     	return lmodel;
     	
     }
+
+	@Override
+	public OntModel viewModel(String user, String role, String rootNode,
+			String relations) throws SQLException, Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

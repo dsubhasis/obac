@@ -13,10 +13,12 @@ import isi.ecsu.view.struct.impl.VirtDataAccess;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -41,193 +43,81 @@ public class RoleAccess {
 	 */
 	public RoleAccess() {
 	}
+
 	private String roleName;
-	private String roleId;
-	private String userName;
-	private String userId;
-	private String perMission;
-	private accessibleChildren asc ;
+	Map permValue;
+	
 	private OntologyObject subjectDAGMember;
-	private OntologyObject objectDAGMember;
 	/**
 	 * @return the roleName
 	 */
 	public String getRoleName() {
 		return roleName;
 	}
+
 	private Logger slf4jLogger = LoggerFactory.getLogger(RoleAccess.class);
-	/**
-	 * @param roleName the roleName to set
-	 */
-	public final void setRoleName(final String roleName) {
-		this.roleName = roleName;
-	}
-	/**
-	 * @return the roleId
-	 */
-	public final String getRoleId() {
-		return roleId;
-	}
-	/**
-	 * @param roleId the roleId to set
-	 */
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-	}
-	/**
-	 * @return the userName
-	 */
-	public String getUserName() {
-		return userName;
-	}
-	/**
-	 * @param userName the userName to set
-	 */
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	/**
-	 * @return the userId
-	 */
-	public String getUserId() {
-		return userId;
-	}
-	/**
-	 * @param userId the userId to set
-	 */
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	/**
-	 * @return the perMission
-	 */
-	public String getPerMission() {
-		return perMission;
-	}
-	/**
-	 * @param perMission the perMission to set
-	 */
-	public void setPerMission(String perMission) {
-		this.perMission = perMission;
-	}
-	public ArrayList<?> getRoleName(String user) throws SQLException
-	{
-		StorageAccess st = new MysqlDataAccess();
-		String query ="SELECT roleName from roleTable where user=\"" + user + "\";";
-		ArrayList<?> lroleName = st.getResultArrayList("roleName", query);
-		return lroleName;
-		
-	}
-	
-	public int getPermission(String objectName, String roleName) throws Exception
-	{
-		
-		
-		//String 
-		
-		
-		
-		
-		//StorageAccess st = new mysqlDataAccess();
-		//String query ="SELECT permission from roleTable where user=\"" + objectName + "\";";
-		//ArrayList lroleName = st.getResultArrayList("roleName", query);
-		
-		asc = new accessibleChildren();
-		//int numberOfActiveSubject = HierarchyActiveComponentList(asc);
-		Iterator itl = asc.getChildren().iterator();
-		while(itl.hasNext())
-		{
-		   String subject = (String) itl.next();
-		   System.out.print(subject);
-		   
+    
+
+	public int getPermission(String objectName, String roleName)
+			throws Throwable {
+		int perm = 0;
+		int returnPerm = 5;
+		permValue = new HashMap<String, Integer>();
+		permValue = this.HierarchyActiveComponentList(roleName, objectName);
+		Iterator pv = null;
+		pv = permValue.entrySet().iterator();
+		while(pv.hasNext()){
+			Map.Entry pair = (Map.Entry)pv.next();
+			if(pair.getValue() == (Object) perm)
+			{
+				slf4jLogger.info("One Postive Permisiion "+pair.getKey());
+				returnPerm = 0;
+				return returnPerm;
+			}
 			
 		}
 		
-		Random rand=new Random(); 
-		int x=rand.nextInt(100); 
-		int y = x % 2;
 		
-		return  y;
+	return returnPerm;	
 		
-		
+
+
 	}
-	public  void HierarchyActiveComponentList(accessibleChildren asc, String subjectName, String objectName) throws Throwable 
-	{
+
+	public Map HierarchyActiveComponentList(String subjectName, String objectName) throws Throwable {
 		subjectDAGMember = new OntologyObject();
 		XacmlRequestGenerator xrg = new XacmlRequestGenerator();
-		String graphName = CommonConstant.userHierarchy;
-		String lgraphUrl = CommonConstant.userGraphURL;
-		String prefix = CommonConstant.prefix01;
-		String lrelation =  CommonConstant.SubjectRelation00;
-		String Prefix = CommonConstant.SubjectPrefix;
-		
-		
 		String subGraphName = CommonConstant.SubjectOntologyStorage;
 		String lsubGraphUrl = CommonConstant.SubjectCommonURI;
 		String lsubRelation = CommonConstant.SubjectRelation00;
 		String sPrefix = CommonConstant.SubjectPrefix;
-		
+
 		String objGraphName = CommonConstant.ObjectOntologyStorage;
 		String lobjGraphUrl = CommonConstant.ObjectCommonURI;
 		String lobjRelation = CommonConstant.ObjectRelation00;
 		String oPrefix = CommonConstant.ObjectPrefix;
-		
-		
-		List<String> lchild = new LinkedList<String>();
-		
+		int option = 3;
 		slf4jLogger.info("Configuration of Logger for Group access ");
-		
 		TraverseOntology objAccess = new TraverseOntology();
-		subjectDAGMember = objAccess.getUserView(subjectName, subGraphName, lsubGraphUrl, lsubRelation, sPrefix);
-		objectDAGMember = objAccess.getParentListRecursive(objectName, objGraphName, lobjGraphUrl, lobjRelation, oPrefix);
-		
+		subjectDAGMember = objAccess.getUserView(subjectName, subGraphName,
+				lsubGraphUrl, lsubRelation, sPrefix);
 		Iterator<String> lsub = null;
-		Iterator<String> lobj = null;
 		lsub = subjectDAGMember.getNodeList().iterator();
-		
-		while(lsub.hasNext())
-		{
+		while (lsub.hasNext()) {
 			String lsubject = lsub.next();
-			lobj = objectDAGMember.getNodeList().iterator();
-			while(lobj.hasNext())
-			{
-				String lobject = lobj.next();
-			ResponseCtx ct	= xrg.getPermissionValue(lsubject, lobject, null, null);
-
-			Set<Result> results  = ct.getResults();
-			Result result = results.iterator().next();
-			int option = result.getDecision();
-			switch(option)
-			{
-			case 0: {
-				
-			}
-			case 1: {
-				
-			}
-			case 2 :{
-				slf4jLogger.info("XACML Plolicy Error");
-			}
-			case 3 : {
-				slf4jLogger.info("Systems Error");
-			}
-			}
-			if(result.getDecision() == 0)
-			{
-				//result.getDecision(); Yes
-			}
-			if(result.getDecision() == 1)
-			{
-				// no
-			}
-				
-			}
+				ResponseCtx ct = xrg.getPermissionValue(lsubject, objectName,
+						null, null);
+				Set<Result> results = ct.getResults();
+				Result result = results.iterator().next();
+				option = result.getDecision();
+				while(option == 0 || option == 1)
+				{
+					permValue.put(lsubject, option);
+					slf4jLogger.info("\n One value found" +lsubject+ "\t Group \t"+objectName);
+				}
+			
 		}
-		
-		
-		
-		
-		
+		return permValue;
 	}
 
 }
