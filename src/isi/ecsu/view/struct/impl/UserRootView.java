@@ -8,6 +8,7 @@ import isi.ecsu.Util.commonUtil;
 import isi.ecsu.security.RoleAccess;
 import isi.ecsu.security.TraverseOntology;
 import isi.ecsu.view.struct.ViewObject;
+import isi.ecsu.view.struct.visitLog;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -48,6 +49,7 @@ public class UserRootView {
 			throws Throwable {
 		Map<String, List<String>> roleNodeSet = new HashMap<String, List<String>>();
 		String lparentURI = parentURI;
+		visitLog vLog = new visitLog();
 		int unvisitedCount = 0;
 		int permValue = 0;
 		RoleAccess raccess = new RoleAccess();
@@ -68,54 +70,31 @@ public class UserRootView {
 				int permRoot = raccess.getPermission(x.toString(), user);
  				if(permRoot == 3)
 				{
+ 					//add the node to negative list
 					permValue = permRoot;
-				}
-				
-				
-				
-				query = commonUtil.queryListParentClassNode(graphName,
-						x.toString(), CommonConstant.relation00, prefix);
-				ResultSet parentList = virt.executeQuery(query);
-				
-				
-				
-				
-				while (parentList.hasNext()) {
-					QuerySolution parentRow = parentList.next();
-					RDFNode p = parentRow.get("cls");
-				}
-				if (parentList.getRowNumber() > 1) {
-					vo.getMultipleParent().add(x.toString());
-				}
-				slf4jLogger.info("\n For the Concept  " + x.toString()
-						+ "  Number of Paernt Found "
-						+ parentList.getRowNumber());
-				/*System.out.println("\n For the Concept  " + x.toString()
-						+ "  Number of Paernt Found "
-						+ parentList.getRowNumber());*/
-				int permChild = raccess.getPermission(x.toString(), "roleName");
-
-				if (permRoot == 1 || permChild == 1) {
-					vo.getNodeElement().put(x.toString(), 1);
-					vo.getPositiveList().add(x.toString());
-				}
-				if (permRoot == 0 || permChild == 0) {
-
-					vo.getNodeElement().put(x.toString(), 0);
+					vLog.addPermission(x.toString(), lparentURI, permValue);
 					vo.getNegativeList().add(x.toString());
 				}
-				if (!unVisited.contains(x.toString())) {
-					unVisited.add(x.toString());
+ 				else{
+ 					//add the node to postive list
+ 					vo.getPositiveList().add(x.toString());
+ 					
+ 				}
+ 				vLog.addPermission(x.toString(), lparentURI, permValue);
+				
+				if (!vLog.getUnVisited().contains(x.toString())) {
+					vLog.getUnVisited().add(x.toString());
+					
 				} else {
 					if (vo.getMultipleParent().contains(x.toString())) {
-						unVisited.add(x.toString());
+						vLog.getUnVisited().add(x.toString());
 					}
 				}
 			}
-			unvisitedCount = unVisited.size();
+			unvisitedCount = vLog.getUnVisited().size();
 			if (unvisitedCount > 0) {
-				lparentURI = unVisited.get(unVisited.size() - 1);
-				unVisited.remove(lparentURI);
+				lparentURI = vLog.getUnVisited().get(vLog.getUnVisited().size() -1);
+				vLog.getUnVisited().remove(lparentURI);
 			}
 		} while (unvisitedCount > 0);
 		System.out.println("\n Analysis Done Generating View for the Role ");
