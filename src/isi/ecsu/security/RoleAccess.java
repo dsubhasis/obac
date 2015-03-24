@@ -100,7 +100,7 @@ public class RoleAccess {
 		slf4jLogger.info("Configuration of Logger for Group access ");
 		TraverseOntology objAccess = new TraverseOntology();
 		subjectDAGMember = objAccess.getUserView(subjectName, subGraphName,
-				lsubGraphUrl, lsubRelation, sPrefix);
+				lsubGraphUrl, sPrefix, lsubRelation);
 		Iterator<String> lsub = null;
 		lsub = subjectDAGMember.getNodeList().iterator();
 		while (lsub.hasNext()) {
