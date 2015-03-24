@@ -21,7 +21,6 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
  * @author subhasis
  * 
  */
-
 public class TraverseOntology {
 
 	private final Logger slf4jLogger = LoggerFactory
@@ -36,7 +35,6 @@ public class TraverseOntology {
 		//this.getUserView(rootElement, graphName, parentURI);
 
 	}
-
 	public OntologyObject getUserView(String rootElement, String graphName,
 			String parentURI, String prefix, String ontologyRelation) throws Exception{
 		String lparentURI = parentURI+rootElement;
@@ -90,7 +88,6 @@ public class TraverseOntology {
 	}
 	public OntologyObject getParentListRecursive(String objectName,  String graphName, String objectURI, String relation, String Prefix) throws Exception
 	{
-		
 			//Map<String, List<String>> roleNodeSet = new HashMap<String, List<String>>();
 			String lparentURI = objectURI + objectName;
 			List<String> unVisited = new LinkedList<String>();
