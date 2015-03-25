@@ -11,6 +11,7 @@ import isi.ecsu.view.struct.impl.StorageAccess;
 import isi.ecsu.view.struct.impl.MysqlDataAccess;
 import isi.ecsu.view.struct.impl.VirtDataAccess;
 
+import java.net.URI;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -105,8 +106,20 @@ public class RoleAccess {
 		lsub = subjectDAGMember.getNodeList().iterator();
 		while (lsub.hasNext()) {
 			String lsubject = lsub.next();
-				ResponseCtx ct = xrg.getPermissionValue(lsubject, objectName,
-						null, null);
+			URI svalue = new URI(lsubject);
+			String spath = svalue.getPath();
+			String host= svalue.getHost();
+			String delims = "#";
+			String[] nodeName = subjectName.split(delims);
+			int n = nodeName.length;
+			
+			String sp = spath.substring(spath.lastIndexOf("/"));
+			
+			sp = spath.replaceAll("/", ".");
+			final String finalSubject = nodeName[n - 1]+"@"+host+sp;
+			
+				ResponseCtx ct = xrg.getPermissionValue(finalSubject, objectName,
+						"admin", "test");
 				Set<Result> results = ct.getResults();
 				Result result = results.iterator().next();
 				option = result.getDecision();
