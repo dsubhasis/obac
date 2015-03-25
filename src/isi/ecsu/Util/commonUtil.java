@@ -4,6 +4,9 @@
 package isi.ecsu.Util;
 
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import virtuoso.jena.driver.VirtGraph;
 import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
 
@@ -89,5 +92,6 @@ public static String queryListofFirstRelationParants(String graphName , String p
 	query = "SELECT ?cls FROM <"+ graphName +"> WHERE { ?cls a owl:Class . ?cls rdfs:subClassOf <"+ parentURI +"> }";
 	return query;
 }
+
 	
 }
