@@ -5,6 +5,7 @@ import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.query.ResultSet;
 
 import virtuoso.jena.driver.VirtGraph;
+import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
 import isi.ecsu.view.struct.impl.View;
 import isi.ecsu.view.struct.impl.ViewGenerationModule;
@@ -23,7 +24,8 @@ public class VirtuosoSPARQLExample1 {
 		String queryString = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT * FROM <http://ecsu.org> WHERE {  ?p skos:prefLabel ?q .}";
 */	
 		View vw = new ViewGenerationModule();
-		String roleName = null, rootObject = "DL-Concept40";
+		String domainName = "www.semanticweb.org.subhasis.ontologies.2014.6.untitled-ontology-15";
+		String roleName = CommonConstant.userGraphURL, rootObject = "DL-Concept40";
 		OntModel lmodel = null;
 		try {
 			OntModel om = vw.roleView(lmodel, roleName, rootObject);

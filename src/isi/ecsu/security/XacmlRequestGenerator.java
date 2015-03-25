@@ -58,7 +58,7 @@ public class XacmlRequestGenerator {
 	{
         
         final FilePolicyModule filePolicyModule = new FilePolicyModule();
-        final File folder = new File(CommonConstant.XACML_POLICY_DIR);
+        final File folder = new File(CommonConstant.XACML_POLICY_STORE);
         int fileCount = 0;
         for(final File fileEntry : folder.listFiles())
         {

@@ -37,7 +37,7 @@ public class TraverseOntology {
 	}
 	public OntologyObject getUserView(String rootElement, String graphName,
 			String parentURI, String prefix, String ontologyRelation) throws Exception{
-		String lparentURI = parentURI+rootElement;
+		String lparentURI = rootElement;
 		List<String> unVisited = new LinkedList<String>();
 		int unvisitedCount = 0;
 		StorageAccess virt = new VirtDataAccess();

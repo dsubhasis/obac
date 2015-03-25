@@ -83,7 +83,7 @@ public class ViewGenerationModule implements View {
     String parentURI = CommonConstant.commonURI + rootObject;
     try {
     	UserRootView urv = new UserRootView();
-		urv.getUserView(vo, "parent" , "child" , "userId", "rootElement", "requestFile", policyFile , "http://dltest.org", parentURI);
+		urv.getUserView(vo, "parent" , "child" , roleName, "rootElement", "requestFile", policyFile , "http://dltest.org", parentURI);
 	} catch (Throwable e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
