@@ -81,7 +81,7 @@ public class XacmlRequestGenerator {
 		final URI resource = new URI(objectId);
 		final URI actionId = new URI("urn:oasis:names:tc:xacml:1.0:action:action-id");
 		final RequestCtx requestUser = createRequest(subjectId, value, groupId, stringAttribValue, resource, actionId);
-		requestUser.encode(System.out, new Indenter());
+	//	requestUser.encode(System.out, new Indenter());
 		final ResponseCtx response = pdp.evaluate(requestUser);
 	
 		return response;

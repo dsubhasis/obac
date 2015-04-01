@@ -32,7 +32,6 @@ public class UserRootView {
 	private visitLog vLog;
 	private List<String> unVisited = new LinkedList<String>();
 	private Logger slf4jLogger = LoggerFactory.getLogger(UserRootView.class);
-
 	public ViewObject getUserView(ViewObject vo, String parent, String child,
 			String user, String rootElement, String requestFile,
 			String policyFile[], String graphName, String parentURI)
@@ -55,25 +54,22 @@ public class UserRootView {
 				QuerySolution row = subClasses.next();
 				RDFNode x = row.get("cls");
 				int permRoot = raccess.getPermission(x.toString(), user);
-				if (permRoot == 3) {
-					// add the node to negative list
+				if(permRoot == 1)
+				{
+					//In case of Deny 
 					permValue = permRoot;
-					vLog.addPermission(x.toString(), lparentURI, permValue);
-					vo.getNegativeList().add(x.toString());
-				} else {
-					// add the node to postive list
-					vo.getPositiveList().add(x.toString());
 				}
+				if(permRoot != 2)
+				{
 				vLog.addPermission(x.toString(), lparentURI, permValue);
-
+				}
+				if(permRoot == 2)
+				{
+					slf4jLogger.info("\n We have found error in Policy:");
+				}
 				if (!vLog.getUnVisited().contains(x.toString())) {
 					vLog.getUnVisited().add(x.toString());
-
-				} else {
-					if (vo.getMultipleParent().contains(x.toString())) {
-						vLog.getUnVisited().add(x.toString());
-					}
-				}
+				} 
 			}
 			unvisitedCount = vLog.getUnVisited().size();
 			if (unvisitedCount > 0) {

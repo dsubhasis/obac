@@ -59,24 +59,16 @@ public class RoleAccess {
 	private Logger slf4jLogger = LoggerFactory.getLogger(RoleAccess.class);
     
 
-	public int getPermission(String objectName, String roleName)
+	public Integer getPermission(String objectName, String roleName)
 			throws Throwable {
 		int perm = 0;
 		int returnPerm = 5;
 		permValue = new HashMap<String, Integer>();
-		permValue = this.HierarchyActiveComponentList(roleName, objectName);
-		Iterator pv = null;
-		pv = permValue.entrySet().iterator();
-		while(pv.hasNext()){
-			Map.Entry pair = (Map.Entry)pv.next();
-			if(pair.getValue() == (Object) perm)
-			{
-				slf4jLogger.info("One Postive Permisiion "+pair.getKey());
-				returnPerm = 0;
-				return returnPerm;
-			}
-			
-		}
+	    returnPerm = this.HierarchyActiveComponentList(roleName, objectName);
+		
+		slf4jLogger.info(roleName, objectName);
+		
+		
 		
 		
 	return returnPerm;	
@@ -85,7 +77,8 @@ public class RoleAccess {
 
 	}
 
-	public Map HierarchyActiveComponentList(String subjectName, String objectName) throws Throwable {
+
+	public Integer HierarchyActiveComponentList(String subjectName, String objectName) throws Throwable {
 		subjectDAGMember = new OntologyObject();
 		XacmlRequestGenerator xrg = new XacmlRequestGenerator();
 		String subGraphName = CommonConstant.SubjectOntologyStorage;
@@ -105,6 +98,7 @@ public class RoleAccess {
 		Iterator<String> lsub = null;
 		lsub = subjectDAGMember.getNodeList().iterator();
 		while (lsub.hasNext()) {
+			option = 3;
 			String lsubject = lsub.next();
 			URI svalue = new URI(lsubject);
 			String spath = svalue.getPath();
@@ -123,14 +117,17 @@ public class RoleAccess {
 				Set<Result> results = ct.getResults();
 				Result result = results.iterator().next();
 				option = result.getDecision();
-				while(option == 0 || option == 1)
+				if(option == 0)
 				{
-					permValue.put(lsubject, option);
-					slf4jLogger.info("\n One value found" +lsubject+ "\t Group \t"+objectName);
+					
+					slf4jLogger.info("\n Positive access found" +lsubject+ "\t Group \t"+objectName);
+					
+					return option;
+					
 				}
 			
 		}
-		return permValue;
+		return option;
 	}
 
 }
