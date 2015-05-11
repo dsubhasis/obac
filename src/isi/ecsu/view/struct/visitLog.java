@@ -6,6 +6,20 @@ import java.util.List;
 import java.util.Map;
 
 public class visitLog {
+	/**
+	 * @return the visitNodeList
+	 */
+	public final Map<String, Map> getVisitNodeList() {
+		return VisitNodeList;
+	}
+
+	/**
+	 * @param visitNodeList the visitNodeList to set
+	 */
+	public final void setVisitNodeList(Map<String, Map> visitNodeList) {
+		VisitNodeList = visitNodeList;
+	}
+
 	List<String> UnVisited;
 	
 	Map<String, Integer> ParentPermissionMap;

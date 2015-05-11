@@ -15,6 +15,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import virtuoso.jena.driver.VirtGraph;
+
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -32,7 +34,8 @@ public class UserRootView {
 	private visitLog vLog;
 	private List<String> unVisited = new LinkedList<String>();
 	private Logger slf4jLogger = LoggerFactory.getLogger(UserRootView.class);
-	public ViewObject getUserView(ViewObject vo, String parent, String child,
+
+	public visitLog getUserView(ViewObject vo, String parent, String child,
 			String user, String rootElement, String requestFile,
 			String policyFile[], String graphName, String parentURI)
 			throws Throwable {
@@ -46,30 +49,35 @@ public class UserRootView {
 		vo.getNodeElement().put(lparentURI, 1);
 		vo.getPositiveList().add(lparentURI);
 		do {
+			VirtGraph vt = virt.virtConnect();
 			String query = commonUtil.queryListSubClassNode(graphName,
 					lparentURI, CommonConstant.relation00, prefix);
 			slf4jLogger.info("\nQuery \t" + query);
-			ResultSet subClasses = virt.executeQuery(query);
+			ResultSet subClasses = virt.executeQuery(query, vt);
 			while (subClasses.hasNext()) {
 				QuerySolution row = subClasses.next();
 				RDFNode x = row.get("cls");
 				int permRoot = raccess.getPermission(x.toString(), user);
-				if(permRoot == 1)
-				{
-					//In case of Deny 
+				if (permRoot == 1) {
+					// In case of Deny
 					permValue = permRoot;
+					vo.getNegativeList().add(x.toString());
 				}
-				if(permRoot != 2)
-				{
-				vLog.addPermission(x.toString(), lparentURI, permValue);
+				/*
+				 * Permit, Deny, Indeterminate (an error occurred or some
+				 * required value was missing, so a decision cannot be made) or
+				 * Not Applicable (the request can't be answered by this
+				 * service).
+				 */
+				if (permRoot != 2) {
+					vLog.addPermission(x.toString(), lparentURI, permValue);
 				}
-				if(permRoot == 2)
-				{
+				if (permRoot == 2) {
 					slf4jLogger.info("\n We have found error in Policy:");
 				}
 				if (!vLog.getUnVisited().contains(x.toString())) {
 					vLog.getUnVisited().add(x.toString());
-				} 
+				}
 			}
 			unvisitedCount = vLog.getUnVisited().size();
 			if (unvisitedCount > 0) {
@@ -77,10 +85,13 @@ public class UserRootView {
 						vLog.getUnVisited().size() - 1);
 				vLog.getUnVisited().remove(lparentURI);
 			}
+			vt.close();
 		} while (unvisitedCount > 0);
 		slf4jLogger.info("\n Analysis Done Generating View for the Role ");
 		vo.setNodeVisitLog(vLog);
-		slf4jLogger.info("\n View Generation Complete updated visit Log and view Object for "+parentURI+"\t Target group is : \t" +user);
-		return vo;
+		slf4jLogger
+				.info("\n View Generation Complete updated visit Log and view Object for "
+						+ parentURI + "\t Target group is : \t" + user);
+		return vLog;
 	}
 }

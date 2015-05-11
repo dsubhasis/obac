@@ -74,20 +74,24 @@ public class VirtDataAccess implements StorageAccess{
 		this.virtUserName = virtUserName;
 	}
 	
-	private VirtGraph virtConnect(){ 
+	public VirtGraph virtConnect(){ 
 		String userName = CommonConstant.virtUser;
 		String passWord = CommonConstant.virtPassword; 
 		String virtUrl = CommonConstant.virtUrl;
 		VirtGraph vt = new VirtGraph(virtUrl, userName, passWord);
 		return vt ;
 	}
-	public com.hp.hpl.jena.query.ResultSet executeQuery(String queryString) throws Exception{
-		VirtGraph vt = this.virtConnect();
+	public com.hp.hpl.jena.query.ResultSet executeQuery(String queryString,VirtGraph vt) throws Exception{
+		String userName = CommonConstant.virtUser;
+		String passWord = CommonConstant.virtPassword; 
+		String virtUrl = CommonConstant.virtUrl;
+		//VirtGraph vt = new VirtGraph(virtUrl, userName, passWord);
 		Query query = QueryFactory.create(queryString);
 		QueryExecution qet = VirtuosoQueryExecutionFactory.create(query, vt);
 		//System.out.println(qet.getQuery());
 		ResultSet results = qet.execSelect();
 		Model model = ModelFactory.createDefaultModel();
+		
 		return results;
 		
 	}

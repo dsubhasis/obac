@@ -67,17 +67,8 @@ public class RoleAccess {
 	    returnPerm = this.HierarchyActiveComponentList(roleName, objectName);
 		
 		slf4jLogger.info(roleName, objectName);
-		
-		
-		
-		
 	return returnPerm;	
-		
-
-
 	}
-
-
 	public Integer HierarchyActiveComponentList(String subjectName, String objectName) throws Throwable {
 		subjectDAGMember = new OntologyObject();
 		XacmlRequestGenerator xrg = new XacmlRequestGenerator();

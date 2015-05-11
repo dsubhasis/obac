@@ -16,9 +16,10 @@ import virtuoso.jena.driver.VirtGraph;
  */
 public interface StorageAccess {
 	
-	public com.hp.hpl.jena.query.ResultSet executeQuery(String queryString) throws Exception;
+	public com.hp.hpl.jena.query.ResultSet executeQuery(String queryString, VirtGraph vt) throws Exception;
 	public ResultSet executeQuerySQL(String charT) throws SQLException ;
 	public ArrayList<Array> getResultArrayList(String name, String query) throws SQLException;
 	public void displyResult(com.hp.hpl.jena.query.ResultSet results);
+	public VirtGraph virtConnect();
 
 }

@@ -104,6 +104,19 @@ public class MysqlDataAccess implements StorageAccess {
 		
 	}
 
+	@Override
+	public com.hp.hpl.jena.query.ResultSet executeQuery(String queryString,
+			VirtGraph vt) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public VirtGraph virtConnect() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/* (non-Javadoc)
 	 * @see isi.ecsu.view.struct.impl.StorageAccess#displyResult(java.sql.ResultSet)
 	 */

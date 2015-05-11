@@ -10,8 +10,11 @@ import isi.ecsu.view.struct.impl.VirtDataAccess;
 
 import java.util.LinkedList;
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import virtuoso.jena.driver.VirtGraph;
 
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
@@ -41,20 +44,23 @@ public class TraverseOntology {
 		List<String> unVisited = new LinkedList<String>();
 		int unvisitedCount = 0;
 		StorageAccess virt = new VirtDataAccess();
+		
+		
 		OntoObj = new OntologyObject();
 		OntoObj.getNodeElement().put(lparentURI, 1);
 		OntoObj.getNodeList().add(lparentURI);
 		do {
+			VirtGraph vt = virt.virtConnect();
 			String query = commonUtil.queryListSubClassNode(graphName,
 					lparentURI, ontologyRelation, prefix);
 			slf4jLogger.info("\nQuery \t" + query);
-			ResultSet subClasses = virt.executeQuery(query);
+			ResultSet subClasses = virt.executeQuery(query, vt);
 			while (subClasses.hasNext()) {
 				QuerySolution row = subClasses.next();
 				RDFNode x = row.get("cls");
 				query = commonUtil.queryListParentClassNode(graphName,
 						x.toString(), ontologyRelation, prefix);
-				ResultSet parentList = virt.executeQuery(query);
+				ResultSet parentList = virt.executeQuery(query, vt);
 				while (parentList.hasNext()) {
 					QuerySolution parentRow = parentList.next();
 					RDFNode p = parentRow.get("cls");
@@ -82,6 +88,7 @@ public class TraverseOntology {
 				lparentURI = unVisited.get(unVisited.size() - 1);
 				unVisited.remove(lparentURI);
 			}
+			vt.close();
 		} while (unvisitedCount > 0);
 		slf4jLogger.info("\n Analysis Done Generating View for the Role ");
 		return OntoObj;
@@ -94,19 +101,21 @@ public class TraverseOntology {
 			int unvisitedCount = 0;
 			//RoleAccess raccess = new RoleAccess();
 			StorageAccess virt = new VirtDataAccess();
+			VirtGraph vt = virt.virtConnect();
 			OntoObj = new OntologyObject();
 			//String prefix = CommonConstant.prefix01;
 			OntoObj.getNodeElement().put(lparentURI, 1);
 			OntoObj.getNodeList().add(lparentURI);
 		do{
+			VirtGraph vt1 = virt.virtConnect();
 		String query = commonUtil.queryListParentClassNode(graphName, objectURI, relation, Prefix);
 					slf4jLogger.info("\nQuery \t" + query);
-					ResultSet subClasses = virt.executeQuery(query);
+					ResultSet subClasses = virt.executeQuery(query, vt1);
 					while (subClasses.hasNext()) {
 						QuerySolution row = subClasses.next();
 						RDFNode x = row.get("cls");
 						query = commonUtil.queryListParentClassNode(graphName, objectURI, relation, Prefix);
-						ResultSet parentList = virt.executeQuery(query);
+						ResultSet parentList = virt.executeQuery(query, vt1);
 						while (parentList.hasNext()) {
 							QuerySolution parentRow = parentList.next();
 							RDFNode p = parentRow.get("cls");
@@ -134,6 +143,7 @@ public class TraverseOntology {
 						lparentURI = unVisited.get(unVisited.size() - 1);
 						unVisited.remove(lparentURI);
 					}
+					vt1.close();
 				} while (unvisitedCount > 0);
 				//System.out.println("\n Analysis Done Generating View for the Role ");
 				slf4jLogger.info("Analysys of parent done ");

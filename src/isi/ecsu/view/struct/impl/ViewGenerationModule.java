@@ -19,6 +19,7 @@ import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.security.RoleAccess;
 import isi.ecsu.view.struct.OntologyConcept;
 import isi.ecsu.view.struct.ViewObject;
+import isi.ecsu.view.struct.visitLog;
 
 
 /**
@@ -83,7 +84,11 @@ public class ViewGenerationModule implements View {
     String parentURI = CommonConstant.commonURI + rootObject;
     try {
     	UserRootView urv = new UserRootView();
-		urv.getUserView(vo, "parent" , "child" , roleName, "rootElement", "requestFile", policyFile , "http://dltest.org", parentURI);
+    	visitLog vl = urv.getUserView(vo, "parent" , "child" , roleName, "rootElement", "requestFile", policyFile , "http://dltest.org", parentURI);
+		//System.out.println(); 
+    	ReConstructionView rsv = new ReConstructionView();
+    	rsv.rebuiltOntology(vl);
+		 
 	} catch (Throwable e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
