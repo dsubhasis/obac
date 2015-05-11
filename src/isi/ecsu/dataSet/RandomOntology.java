@@ -115,11 +115,11 @@ public class RandomOntology {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		RandomOntology r = new RandomOntology(600);
+		RandomOntology r = new RandomOntology(10);
 		OntModel o = r.GenerateOntology();
 		//o.write(System.out);
 
-		File ontologyOutput = new File("/Users/subhasis/Documents/workspace/trunk/trunk/src/isi/ecsu/dataSet/property-3.owl");
+		File ontologyOutput = new File("/Users/subhasis/Documents/workspace/obac/src/isi/ecsu/dataSet/property-3.owl");
 
 		if (!ontologyOutput.exists())
 		{

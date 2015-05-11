@@ -25,7 +25,7 @@ public class VirtuosoSPARQLExample1 {
 */	
 		View vw = new ViewGenerationModule();
 		String domainName = "www.semanticweb.org.subhasis.ontologies.2014.6.untitled-ontology-15";
-		String roleName = CommonConstant.userGraphURL, rootObject = "DL-Concept40";
+		String roleName = CommonConstant.userGraphURL, rootObject = "DL-Concept19";
 		OntModel lmodel = null;
 		try {
 			OntModel om = vw.roleView(lmodel, roleName, rootObject);
