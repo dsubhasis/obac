@@ -1,6 +1,7 @@
 package isi.ecsu.view.struct;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -20,34 +21,27 @@ public class visitLog {
 		VisitNodeList = visitNodeList;
 	}
 
-	List<String> UnVisited;
+	List<Map> UnVisited;
+	
+	
+	
+	
+	
+	
 	
 	Map<String, Integer> ParentPermissionMap;
 	Map<String, Map> VisitNodeList;
 	public visitLog() {
 		UnVisited = new LinkedList();
 		
-		ParentPermissionMap = new HashMap<String, Integer>();
+		
 		VisitNodeList = new HashMap<String, Map>();
 	}
-	
-	/**
-	 * @return the unVisited
-	 */
-	public final List<String> getUnVisited() {
-		return UnVisited;
-	}
 
-	/**
-	 * @param unVisited the unVisited to set
-	 */
-	public final void setUnVisited(List<String> unVisited) {
-		UnVisited = unVisited;
-	}
 
 	public Map<String, Map> addPermission(String node, String parentNode, int perM)
 	{
-		
+		ParentPermissionMap = new HashMap<String, Integer>();
 		
 		if(!VisitNodeList.containsValue(node))
 		{
@@ -66,5 +60,34 @@ public class visitLog {
 		return VisitNodeList;
 		
 	}
+	public final void setUnVisitedNodeName(String node, Integer perm)
+	{
+		
+		boolean duplicate = false;
+		for(int i = 0; i < UnVisited.size(); i++ )
+		{
+		
+		if(UnVisited.get(i).containsKey(node)){
+		 duplicate = true;
+		
+		}
+		}
+		if(!duplicate)
+		{
+			Map unVisitedNode = new HashMap();
+			unVisitedNode.put("node", node);
+			unVisitedNode.put("value", perm);
+			UnVisited.add(unVisitedNode);
+		}
+		
+	}
+
+	/**
+	 * @return the unVisited
+	 */
+	public final List<Map> getUnVisited() {
+		return UnVisited;
+	}
+	
 
 }
