@@ -48,6 +48,7 @@ public class UserRootView {
 		String prefix = CommonConstant.prefix01;
 		vo.getNodeElement().put(lparentURI, 1);
 		vo.getPositiveList().add(lparentURI);
+		vLog.addPermission("userRootNode",lparentURI, permValue);
 		do {
 			VirtGraph vt = virt.virtConnect();
 			String query = commonUtil.queryListSubClassNode(graphName,
@@ -75,15 +76,17 @@ public class UserRootView {
 				if (permRoot == 2) {
 					slf4jLogger.info("\n We have found error in Policy:");
 				}
-				if (!vLog.getUnVisited().contains(x.toString())) {
-					vLog.getUnVisited().add(x.toString());
-				}
+				
+					vLog.setUnVisitedNodeName(x.toString(), permValue);
+				
 			}
 			unvisitedCount = vLog.getUnVisited().size();
 			if (unvisitedCount > 0) {
-				lparentURI = vLog.getUnVisited().get(
-						vLog.getUnVisited().size() - 1);
-				vLog.getUnVisited().remove(lparentURI);
+				
+				
+				lparentURI = (String) vLog.getUnVisited().get(vLog.getUnVisited().size() - 1).get("node");
+				permValue = (int) vLog.getUnVisited().get(vLog.getUnVisited().size() - 1).get("value");
+				vLog.getUnVisited().remove(vLog.getUnVisited().size() - 1);
 			}
 			vt.close();
 		} while (unvisitedCount > 0);
