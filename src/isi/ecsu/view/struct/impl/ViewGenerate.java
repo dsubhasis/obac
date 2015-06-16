@@ -3,6 +3,8 @@
  */
 package isi.ecsu.view.struct.impl;
 
+import org.json.JSONObject;
+
 import isi.ecsu.Util.CommonConstant;
 
 import com.hp.hpl.jena.ontology.OntModel;
@@ -12,10 +14,10 @@ import com.hp.hpl.jena.ontology.OntModel;
  *
  */
 public class ViewGenerate {
-	public void executeView(String rootObject, String userGroupName)
+	public JSONObject executeView(String rootObject, String userGroupName)
 	{
 		
-		
+		JSONObject om = null;
 
 		View vw = new ViewGenerationModule();
 		String domainName = "www.semanticweb.org.subhasis.ontologies.2014.6.untitled-ontology-15";
@@ -23,12 +25,13 @@ public class ViewGenerate {
 		OntModel lmodel = null;
 		try {
 			System.out.println("Version 1.0");
-			OntModel om = vw.roleView(lmodel, userGroupName, rootObject);
-			System.out.println("Version 1.0");
+			om = vw.roleView(lmodel, userGroupName, rootObject);
+			//System.out.println("Version 1.0");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return om;
 		
 	}
 		

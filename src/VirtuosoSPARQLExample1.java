@@ -8,6 +8,7 @@ import virtuoso.jena.driver.VirtGraph;
 import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
 import isi.ecsu.view.struct.impl.View;
+import isi.ecsu.view.struct.impl.ViewGenerate;
 import isi.ecsu.view.struct.impl.ViewGenerationModule;
 
 
@@ -27,13 +28,9 @@ public class VirtuosoSPARQLExample1 {
 		String domainName = "www.semanticweb.org.subhasis.ontologies.2014.6.untitled-ontology-15";
 		String roleName = CommonConstant.userGraphURL, rootObject = "DL-Concept19";
 		OntModel lmodel = null;
-		try {
-			OntModel om = vw.roleView(lmodel, roleName, rootObject);
-			System.out.println("Test");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ViewGenerate vg = new ViewGenerate();
+		vg.executeView(rootObject, roleName);
+		
 		
 	}
 }

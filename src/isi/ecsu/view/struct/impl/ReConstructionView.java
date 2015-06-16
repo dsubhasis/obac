@@ -38,7 +38,7 @@ public class ReConstructionView {
 	}
 
 
-	public void rebuiltOntology(visitLog vl) throws MalformedURLException{
+	public JSONObject rebuiltOntology(visitLog vl) throws MalformedURLException{
 		
 		dlo = new JSONObject();
 
@@ -107,6 +107,7 @@ public class ReConstructionView {
 	}
 	
 	System.out.println(dlo.toString());
+	return dlo;
 	
 }
 }

@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.json.JSONObject;
+
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
@@ -72,9 +74,9 @@ public class ViewGenerationModule implements View {
 	 * 
 	 */
 	
-    public OntModel roleView(OntModel lmodel, String roleName, String rootObject ) throws Exception {
+    public JSONObject roleView(OntModel lmodel, String roleName, String rootObject ) throws Exception {
     	
-   
+    	JSONObject js = null;
     String policyFile[] = null;
     ViewObject vo = new ViewObject();
     if(rootObject.isEmpty() )
@@ -87,13 +89,13 @@ public class ViewGenerationModule implements View {
     	visitLog vl = urv.getUserView(vo, "parent" , "child" , roleName, "rootElement", "requestFile", policyFile , "http://dltest.org", parentURI);
 		//System.out.println(); 
     	ReConstructionView rsv = new ReConstructionView();
-    	rsv.rebuiltOntology(vl);
+    	 js = rsv.rebuiltOntology(vl);
 		 
 	} catch (Throwable e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-    	return lmodel;
+    	return js;
     	
     }
 
