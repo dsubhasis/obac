@@ -6,6 +6,7 @@ package isi.ecsu.view.struct.impl;
 
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.rmi.server.UID;
 import java.util.HashMap;
@@ -14,8 +15,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import isi.ecsu.Util.commonUtil;
 import isi.ecsu.view.struct.visitLog;
 
 
@@ -59,38 +62,51 @@ public class ReConstructionView {
 		}
 		listNode.remove("userRootNode");
 		Map jsonRoot = new HashMap();
-		jsonRoot.put("rootNode", new URL(rootNode));
+		dlo.put("rootNode", new URL(rootNode));
 		for(Map.Entry<String, Map> entryObj : listNode.entrySet()){
 		Map<String, Integer> parentList = new HashMap();
 		parentList = entryObj.getValue();
-		URL concept = new URL(entryObj.getKey());
+		String concept = entryObj.getKey();
 	    List parentStruct = new LinkedList();
 	    Map parentMap = new HashMap();
-	   // parentMap.put("Concept", concept);
+	    JSONObject parentJSON = new JSONObject();
+	    JSONArray parentConceptJSON = new JSONArray();
+	    List docClass = new LinkedList<String>();
 		for(Map.Entry<String, Integer> entryConcept : parentList.entrySet())
 		{
+			
+			List documentClass;
 			List parentConcept = new LinkedList();
 			String parentNode = entryConcept.getKey();
 		   Integer permV = entryConcept.getValue();
 		   parentConcept.add(new URL(parentNode));
 		   parentConcept.add(permV);
 		   parentStruct.add(parentConcept);
+		   parentConceptJSON.put(parentStruct);
+		   if(permV == 0)
+		   {
+			   
+			   String[] documentSrc = parentNode.split("#");
+			   
+			   docClass.add(documentSrc[documentSrc.length -1 ]);
+		   }
+		   
 		}
-		parentMap.put("parent", parentStruct);
-		jsonRoot.put(concept, parentMap);
-		
-		
-		
-		
+		parentJSON.put("docClasses", commonUtil.powerset(docClass));
+		URL conceptURL = new URL(concept);
+		parentJSON.put("Parents", parentConceptJSON);
+		String spath = conceptURL.getPath();
+		String host= conceptURL.getHost();
+		String delims = "#";
+		String[] nodeName = concept.split(delims);
+		int n = nodeName.length;
+		String name = nodeName[n-1];
+		parentJSON.put("doi", concept);
+		dlo.put(name+"@"+host+spath, parentJSON);
 		
 	}
-		
 	
-		
-	
-	dlo.putAll(jsonRoot);
-	
-	System.out.println();
+	System.out.println(dlo.toString());
 	
 }
 }
