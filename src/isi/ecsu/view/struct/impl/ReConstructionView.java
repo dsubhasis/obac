@@ -67,7 +67,7 @@ public class ReConstructionView {
 		Map<String, Integer> parentList = new HashMap();
 		parentList = entryObj.getValue();
 		String concept = entryObj.getKey();
-	    List parentStruct = new LinkedList();
+	   // List parentStruct = new LinkedList();
 	    Map parentMap = new HashMap();
 	    JSONObject parentJSON = new JSONObject();
 	    JSONArray parentConceptJSON = new JSONArray();
@@ -81,8 +81,8 @@ public class ReConstructionView {
 		   Integer permV = entryConcept.getValue();
 		   parentConcept.add(new URL(parentNode));
 		   parentConcept.add(permV);
-		   parentStruct.add(parentConcept);
-		   parentConceptJSON.put(parentStruct);
+		   //parentStruct.add(parentConcept);
+		   parentConceptJSON.put(parentConcept);
 		   if(permV == 0)
 		   {
 			   
