@@ -18,7 +18,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactoryBase;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 
 import isi.ecsu.Util.CommonConstant;
-import isi.ecsu.security.RoleAccess;
+import isi.ecsu.security.SecureAccessXACML;
 import isi.ecsu.view.struct.OntologyConcept;
 import isi.ecsu.view.struct.ViewObject;
 import isi.ecsu.view.struct.visitLog;
@@ -52,7 +52,7 @@ public class ViewGenerationModule implements View {
 	 */
 	/*public OntModel viewModel(String user, String role, String rootNode, String relationNode) throws Exception{
 		OntModel lOntModel = ModelFactory.createOntologyModel();
-		RoleAccess ras = new RoleAccess();
+		SecureAccessXACML ras = new SecureAccessXACML();
 		ArrayList  roleName = ras.getRoleName();
 		for(int i =0; i<= roleName.size(); i++)
 		{
@@ -74,7 +74,7 @@ public class ViewGenerationModule implements View {
 	 * 
 	 */
 	
-    public JSONObject roleView(OntModel lmodel, String roleName, String rootObject ) throws Exception {
+    public JSONObject rView(OntModel lmodel, String roleName, String rootObject ) throws Exception {
     	
     	JSONObject js = null;
     String policyFile[] = null;
@@ -105,5 +105,7 @@ public class ViewGenerationModule implements View {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

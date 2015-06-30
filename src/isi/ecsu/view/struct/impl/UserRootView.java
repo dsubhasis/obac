@@ -5,7 +5,7 @@ package isi.ecsu.view.struct.impl;
 
 import isi.ecsu.Util.CommonConstant;
 import isi.ecsu.Util.commonUtil;
-import isi.ecsu.security.RoleAccess;
+import isi.ecsu.security.SecureAccessXACML;
 import isi.ecsu.view.struct.ViewObject;
 import isi.ecsu.view.struct.visitLog;
 
@@ -43,7 +43,7 @@ public class UserRootView {
 		vLog = new visitLog();
 		int unvisitedCount = 0;
 		int permValue = 0;
-		RoleAccess raccess = new RoleAccess();
+		SecureAccessXACML raccess = new SecureAccessXACML();
 		StorageAccess virt = new VirtDataAccess();
 		String prefix = CommonConstant.prefix01;
 		vo.getNodeElement().put(lparentURI, 1);

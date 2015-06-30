@@ -99,7 +99,7 @@ public class TraverseOntology {
 			String lparentURI = objectURI + objectName;
 			List<String> unVisited = new LinkedList<String>();
 			int unvisitedCount = 0;
-			//RoleAccess raccess = new RoleAccess();
+			//SecureAccessXACML raccess = new SecureAccessXACML();
 			StorageAccess virt = new VirtDataAccess();
 			VirtGraph vt = virt.virtConnect();
 			OntoObj = new OntologyObject();

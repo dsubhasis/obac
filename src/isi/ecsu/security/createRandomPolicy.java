@@ -88,8 +88,8 @@ public class createRandomPolicy {
 		String xacmlStore = CommonConstant.XACML_POLICY_STORE+"dummy-Policy-file";
 
 		try {
-			lObject = tOnto.getUserView(objectRoot, objectGraph, objectUri, objectPrefix, objectOntologyRelation);
-			lSubject = tOnto.getUserView(subjectRoot, subjectGraph, subjectUri, subjectPrefix, subjectOntologyRelation);
+			lObject = tOnto.getUserView(objectUri+objectRoot, objectGraph, objectUri, objectPrefix, objectOntologyRelation);
+			lSubject = tOnto.getUserView(subjectUri+subjectRoot, subjectGraph, subjectUri, subjectPrefix, subjectOntologyRelation);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

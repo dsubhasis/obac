@@ -20,7 +20,7 @@ import com.hp.hpl.jena.ontology.OntModel;
 public interface View {
 	
 	OntModel viewModel(String user, String role, String rootNode, String relations) throws SQLException, Exception;
-	public JSONObject roleView(OntModel lmodel, String roleName, String rootObject ) throws Exception;
+	public JSONObject rView(OntModel lmodel, String roleName, String rootObject ) throws Exception;
 	
 	
 	

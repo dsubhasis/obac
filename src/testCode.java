@@ -36,7 +36,7 @@ public class testCode {
 	public static void main(String[] args) throws UnknownIdentifierException,
 			URISyntaxException, FunctionTypeException, FileNotFoundException {
 		createRandomPolicy cr = new createRandomPolicy();
-		String objectRoot = "DL-Concept20";
+		String objectRoot = "DL-Concept19";
 		String objectGraph = CommonConstant.ObjectOntologyStorage;
 		String objectUri = CommonConstant.ObjectCommonURI;
 		String objectPrefix = CommonConstant.ObjectPrefix;

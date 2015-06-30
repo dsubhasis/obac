@@ -25,7 +25,7 @@ public class ViewGenerate {
 		OntModel lmodel = null;
 		try {
 			System.out.println("Version 1.0");
-			om = vw.roleView(lmodel, userGroupName, rootObject);
+			om = vw.rView(lmodel, userGroupName, rootObject);
 			//System.out.println("Version 1.0");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
